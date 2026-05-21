@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="AI가 매일 자동 수집하는 금융·경제 리스크 뉴스">
+<meta property="og:title" content="경제일보 ✦ AI Finance News">
+<meta property="og:description" content="Gemini AI가 매일 자동 수집·요약하는 금융 리스크 뉴스">
+<title>경제일보 ✦ AI Finance News</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#1a3a6b; --navy2:#0d2550; --navy3:#0a1e40;
+  --gold:#e8b84b; --gold2:#c9952a;
+  --bg:#f5f3ee; --bg2:#fff; --bg3:#f0ede6;
+  --text:#1a1a1a; --text2:#4a4a4a; --text3:#888;
+  --border:#d4cfc4; --border2:#e8e3d8;
+  --red:#c0392b; --amber:#d68910; --green:#1a7a4a; --blue:#1a3a6b;
+  --sans:'Noto Sans KR',sans-serif;
+  --serif:'Noto Serif KR',serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+/* ── TOP BAR ── */
+.topbar{background:var(--navy3);padding:5px 0;overflow:hidden}
+.ticker-wrap{display:flex;align-items:center}
+.ticker-label{background:var(--gold);color:var(--navy3);font-family:var(--mono);font-size:10px;font-weight:500;padding:2px 10px;white-space:nowrap;flex-shrink:0}
+.ticker-track{overflow:hidden;flex:1;padding:0 12px}
+.ticker-inner{display:inline-block;white-space:nowrap;animation:ticker 30s linear infinite;font-family:var(--mono);font-size:11px;color:#a0b8e8}
+@keyframes ticker{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
+.ticker-inner:hover{animation-play-state:paused}
+
+/* ── HEADER ── */
+header{background:var(--navy);border-bottom:3px solid var(--gold);padding:16px 0}
+.header-inner{max-width:960px;margin:0 auto;padding:0 1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.logo-wrap{}
+.logo-main{font-family:var(--serif);font-size:32px;color:var(--gold);letter-spacing:3px}
+.logo-sub{font-family:var(--mono);font-size:10px;color:#7090c0;letter-spacing:4px;margin-top:3px}
+.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.header-date{font-family:var(--mono);font-size:11px;color:#a0b8e8}
+.search-form{display:flex;gap:6px}
+.search-form input{font-family:var(--sans);font-size:12px;padding:6px 10px;background:var(--navy2);border:1px solid #2a5090;color:#cdd8f0;border-radius:4px;width:180px;outline:none}
+.search-form input::placeholder{color:#4a6090}
+.search-form input:focus{border-color:var(--gold)}
+.search-form button{font-family:var(--mono);font-size:11px;padding:6px 12px;background:var(--gold);border:none;border-radius:4px;color:var(--navy3);font-weight:500;cursor:pointer}
+.search-form button:hover{background:var(--gold2)}
+
+/* ── NAV ── */
+nav.mainnav{background:var(--navy2);border-bottom:1px solid #1a3560}
+.mainnav-inner{max-width:960px;margin:0 auto;padding:0 1rem;display:flex;align-items:center;justify-content:space-between}
+.nav-links{display:flex}
+.nav-links a{font-family:var(--mono);font-size:12px;color:#a0b8e8;padding:10px 16px;display:block;border-right:1px solid #1a3560;transition:all 0.15s;cursor:pointer}
+.nav-links a:hover,.nav-links a.on{background:var(--navy);color:var(--gold)}
+.nav-right-info{font-family:var(--mono);font-size:10px;color:#4a6090;padding-right:8px;display:flex;align-items:center;gap:6px}
+.live-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;animation:blink 1.5s infinite;display:inline-block}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+
+/* ── BODY LAYOUT ── */
+.body-wrap{max-width:960px;margin:0 auto;padding:1.25rem 1rem;display:grid;grid-template-columns:1fr 220px;gap:1.25rem}
+@media(max-width:700px){.body-wrap{grid-template-columns:1fr}.sidebar{display:none}}
+
+/* ── BREAKING LABEL ── */
+.section-label{font-family:var(--mono);font-size:11px;color:var(--text3);letter-spacing:2px;border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:12px}
+
+/* ── NEWS CARD ── */
+.news-card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:14px;transition:box-shadow 0.15s}
+.news-card:hover{box-shadow:0 2px 12px rgba(0,0,0,0.08)}
+.card-accent{height:4px}
+.card-body{padding:14px 16px}
+.card-meta{display:flex;align-items:center;gap:6px;margin-bottom:8px;flex-wrap:wrap}
+.ctag{font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:3px;border:1px solid;font-weight:500}
+.tag-red{color:#922b21;background:#fdf2f0;border-color:#f1948a}
+.tag-amber{color:#7d5a0a;background:#fef9e7;border-color:#f9ca74}
+.tag-green{color:#1a5c35;background:#f0fbf4;border-color:#82e0aa}
+.tag-blue{color:#1a3a6b;background:#eaf0fb;border-color:#93b8e8}
+.cnew{font-family:var(--mono);font-size:9px;background:var(--gold);color:var(--navy3);padding:1px 6px;border-radius:2px;font-weight:500;letter-spacing:1px}
+.ctime{font-family:var(--mono);font-size:10px;color:var(--text3)}
+.card-title{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.5}
+.card-headline{font-size:13px;color:#1a3a6b;margin-bottom:10px;line-height:1.5;font-style:italic;border-left:3px solid var(--gold);padding-left:8px}
+.card-summary{font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:10px}
+.card-points{padding-left:16px;margin-bottom:10px}
+.card-points li{font-size:12px;color:var(--text2);margin-bottom:4px;line-height:1.6}
+.card-imp{background:var(--bg3);border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 4px 4px 0;font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:10px}
+.imp-label{font-family:var(--mono);font-size:10px;color:var(--text3);display:block;margin-bottom:3px;letter-spacing:1px}
+.card-sources{border-top:1px solid var(--border2);padding-top:10px}
+.src-label{font-family:var(--mono);font-size:10px;color:var(--text3);margin-bottom:6px;letter-spacing:1px}
+.src-item{display:flex;align-items:center;gap:8px;padding:5px 8px;background:var(--bg3);border-radius:4px;margin-bottom:4px;border:1px solid transparent;transition:border-color 0.15s;text-decoration:none}
+.src-item:hover{border-color:var(--border);background:var(--bg2)}
+.src-pub{font-family:var(--mono);font-size:10px;color:var(--blue);min-width:64px;flex-shrink:0}
+.src-title{font-size:11px;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+.src-icon{font-size:11px;color:var(--text3);flex-shrink:0}
+.card-footer{display:flex;justify-content:space-between;align-items:center;padding:7px 16px;border-top:1px solid var(--border2);background:var(--bg3)}
+.cf-date{font-family:var(--mono);font-size:10px;color:var(--text3)}
+.cf-actions{display:flex;gap:10px}
+.cf-btn{font-family:var(--mono);font-size:10px;color:var(--text3);cursor:pointer;display:flex;align-items:center;gap:3px;background:none;border:none;padding:0}
+.cf-btn:hover{color:var(--blue)}
+
+/* ── FILTER BAR ── */
+.filter-bar{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.fbtn{font-family:var(--mono);font-size:11px;padding:4px 12px;border-radius:999px;border:1px solid var(--border);color:var(--text3);background:var(--bg2);cursor:pointer;transition:all 0.15s}
+.fbtn:hover,.fbtn.on{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+
+/* ── SIDEBAR ── */
+.sidebar{}
+.sbox{background:var(--bg2);border:1px solid var(--border);border-radius:6px;margin-bottom:12px;overflow:hidden}
+.sbox-title{background:var(--navy);padding:7px 12px;font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:2px;display:flex;align-items:center;gap:6px}
+.sbox-body{padding:10px 12px}
+.srow{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--border2)}
+.srow:last-child{border-bottom:none}
+.srow-label{font-size:12px;color:var(--text2)}
+.srow-val{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--text)}
+.srow-val.up{color:var(--red)}
+.srow-val.dn{color:#1a6b9a}
+.visit-num{font-family:var(--mono);font-size:22px;font-weight:500;color:var(--navy);text-align:center;padding:4px 0}
+.visit-sub{font-family:var(--mono);font-size:10px;color:var(--text3);text-align:center;margin-bottom:8px}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:4px}
+.kw{font-family:var(--mono);font-size:10px;padding:3px 8px;border-radius:999px;border:1px solid var(--border);color:var(--text3);background:var(--bg3);cursor:pointer;transition:all 0.15s}
+.kw:hover{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+.status-row{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--border2)}
+.status-row:last-child{border-bottom:none}
+.status-label{font-size:11px;color:var(--text3)}
+.status-val{font-family:var(--mono);font-size:11px;color:var(--text)}
+
+/* ── FOOTER ── */
+footer{background:var(--navy3);border-top:2px solid var(--gold);padding:20px 1rem;margin-top:2rem}
+.footer-inner{max-width:960px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:8px}
+.footer-logo{font-family:var(--serif);font-size:18px;color:var(--gold)}
+.footer-text{font-family:var(--mono);font-size:10px;color:#4a6090;text-align:center;line-height:1.8}
+.footer-links{display:flex;gap:16px}
+.footer-links a{font-family:var(--mono);font-size:10px;color:#7090c0;cursor:pointer}
+.footer-links a:hover{color:var(--gold)}
+
+/* ── EMPTY STATE ── */
+.empty{text-align:center;padding:3rem;color:var(--text3);font-family:var(--mono);font-size:13px}
+
+/* ── PAGINATION ── */
+.pagination{display:flex;justify-content:center;gap:4px;margin-top:1rem}
+.ppage{font-family:var(--mono);font-size:12px;padding:5px 10px;border:1px solid var(--border);border-radius:4px;color:var(--text3);cursor:pointer;background:var(--bg2)}
+.ppage.on,.ppage:hover{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+</style>
+</head>
+<body>
+
+<!-- TOP TICKER -->
+<div class="topbar">
+  <div class="ticker-wrap">
+    <div class="ticker-label">속보</div>
+    <div class="ticker-track">
+      <span class="ticker-inner" id="tickerText">
+        금감원, 2분기 금융권 스트레스테스트 결과 발표 예정 &nbsp;·&nbsp;
+        바젤4 자본규제 최종 이행 가이드라인 배포 &nbsp;·&nbsp;
+        ESG 공시 의무화 시행령 입법예고 &nbsp;·&nbsp;
+        가계부채 관리방안 추가 발표 예정 &nbsp;·&nbsp;
+        AI 기반 이상거래탐지시스템 도입 금융사 확대
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <div class="logo-main">경제일보 ✦</div>
+      <div class="logo-sub">AI FINANCE NEWS · EST. 2026</div>
+    </div>
+    <div class="header-right">
+      <div class="header-date" id="headerDate"></div>
+      <div class="search-form">
+        <input type="text" id="searchInput" placeholder="키워드 검색..." />
+        <button onclick="searchNews()">검색</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="mainnav">
+  <div class="mainnav-inner">
+    <div class="nav-links">
+      <a class="on" onclick="filterBy('all',this)">전체</a>
+      <a onclick="filterBy('규제',this)">금융규제</a>
+      <a onclick="filterBy('리스크',this)">리스크</a>
+      <a onclick="filterBy('ESG',this)">ESG</a>
+      <a onclick="filterBy('사이버',this)">사이버</a>
+      <a onclick="filterBy('부동산',this)">부동산</a>
+    </div>
+    <div class="nav-right-info">
+      <span class="live-dot"></span>
+      <span id="lastUpdate">업데이트 중...</span>
+    </div>
+  </div>
+</nav>
+
+<!-- BODY -->
+<div class="body-wrap">
+
+  <!-- MAIN -->
+  <main>
+    <div class="section-label">■ AI 자동수집 뉴스 — 매일 오전 8시 업데이트</div>
+
+    <div class="filter-bar">
+      <button class="fbtn on" onclick="filterByLevel('all',this)">전체</button>
+      <button class="fbtn" onclick="filterByLevel('고',this)">🔴 고위험</button>
+      <button class="fbtn" onclick="filterByLevel('중',this)">🟡 중위험</button>
+      <button class="fbtn" onclick="filterByLevel('저',this)">🟢 저위험</button>
+    </div>
+
+    <div id="newsContainer">
+      <!-- collector.py가 생성한 데이터가 여기에 주입됨 -->
+    </div>
+
+    <div class="empty" id="emptyMsg" style="display:none">
+      해당 조건의 뉴스가 없습니다.
+    </div>
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sbox">
+      <div class="sbox-title">📊 주요 지표</div>
+      <div class="sbox-body" id="marketData">
+        <div class="srow"><span class="srow-label">KOSPI</span><span class="srow-val up" id="kospi">-</span></div>
+        <div class="srow"><span class="srow-label">원/달러</span><span class="srow-val dn" id="usdkrw">-</span></div>
+        <div class="srow"><span class="srow-label">국고채 3Y</span><span class="srow-val" id="bond">-</span></div>
+        <div class="srow"><span class="srow-label">기준금리</span><span class="srow-val" id="rate">-</span></div>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sbox-title">👁 방문자 현황</div>
+      <div class="sbox-body">
+        <div class="visit-num" id="todayVisit">0</div>
+        <div class="visit-sub">오늘 방문자</div>
+        <div class="srow"><span class="srow-label">누적</span><span class="srow-val" id="totalVisit">0</span></div>
+        <div class="srow"><span class="srow-label">수집 기사</span><span class="srow-val" id="articleCount">0건</span></div>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sbox-title"># 인기 키워드</div>
+      <div class="sbox-body">
+        <div class="kw-wrap" id="keywords">
+          <span class="kw">#바젤4</span>
+          <span class="kw">#ESG공시</span>
+          <span class="kw">#PF리스크</span>
+          <span class="kw">#AI규제</span>
+          <span class="kw">#가계부채</span>
+          <span class="kw">#IFRS9</span>
+          <span class="kw">#사이버</span>
+          <span class="kw">#IRRBB</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sbox-title">🤖 수집 현황</div>
+      <div class="sbox-body">
+        <div class="status-row"><span class="status-label">마지막 수집</span><span class="status-val" id="lastCollect">-</span></div>
+        <div class="status-row"><span class="status-label">다음 수집</span><span class="status-val" id="nextCollect">-</span></div>
+        <div class="status-row"><span class="status-label">오늘 수집</span><span class="status-val" id="todayCollect">0건</span></div>
+        <div class="status-row"><span class="status-label">AI 모델</span><span class="status-val">Gemini 2.5</span></div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">경제일보 ✦</div>
+    <div class="footer-text">
+      Powered by Gemini 2.5 Flash · GitHub Pages 무료 호스팅<br>
+      본 사이트의 뉴스는 AI가 자동 수집·요약한 내용으로, 투자 권유나 법적 조언이 아닙니다.
+    </div>
+    <div class="footer-links">
+      <a>소개</a>
+      <a>이용약관</a>
+      <a>문의</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── 뉴스 데이터 (collector.py가 이 부분을 자동으로 교체) ──
+const NEWS_DATA = [
+  {
+    title: "핀테크 규제 격차 해소 및 AI 리스크 대응 강화 방안 발표",
+    category: "규제동향",
+    level: "고",
+    headline: "금융당국, 빅테크-금융사 동일기능-동일규제 원칙 강화 추진",
+    summary: "금융당국은 빅테크의 금융 서비스 확대에 따른 리스크 증가에 주목하며 전통 금융회사와의 규제 격차 해소를 위한 정책을 추진하고 있다. AI 기술 발전에 따른 사이버 공격 위협 증가에 대비해 금융권의 선제적 위험 관리 체계 구축도 강조했다.",
+    keypoints: ["빅테크-금융사 규제 격차로 인한 시스템 리스크 우려 증대", "AI 기반 사이버 공격 대비 자율 보안체계 전환 요구", "고위험 상품·불법 금융광고 소비자 보호 강화"],
+    implication: "빅테크와 공정한 경쟁 환경 구축 및 AI 신기술 리스크 내부 통제 고도화 필요",
+    sources: [
+      {publisher:"금융위원회", title:"핀테크·디지털금융 규제 혁신 방안 발표문", url:"https://www.fsc.go.kr"},
+      {publisher:"금융감독원", title:"AI 활용 금융서비스 리스크 관리 가이드라인", url:"https://www.fss.or.kr"}
+    ],
+    collectedAt: "2026-05-21 08:00"
+  },
+  {
+    title: "ESG 공시 의무화 확대 및 기후 리스크 스트레스테스트 도입",
+    category: "ESG",
+    level: "중",
+    headline: "금감원, 자산 2조 이상 금융사 기후 리스크 정기 점검 의무화",
+    summary: "금융당국이 ESG 공시 의무화 범위를 확대하고 기후 리스크를 반영한 스트레스테스트를 도입할 예정이다. 탄소 배출량 및 기후 관련 리스크 관리 체계 구축이 시급해졌다.",
+    keypoints: ["2026년부터 자산 2조 원 이상 금융사 ESG 공시 의무화", "기후 시나리오 기반 스트레스테스트 연 1회 실시 의무", "탄소중립 포트폴리오 전환 계획 제출 요구"],
+    implication: "ESG 데이터 수집 체계와 기후 리스크 측정 모델을 조기 구축해야 한다",
+    sources: [
+      {publisher:"금융감독원", title:"기후 리스크 관리 및 ESG 공시 로드맵 2025", url:"https://www.fss.or.kr"}
+    ],
+    collectedAt: "2026-05-20 08:00"
+  },
+  {
+    title: "금융권 사이버보안 강화 가이드라인 업데이트 및 모의훈련 의무화",
+    category: "사이버리스크",
+    level: "저",
+    headline: "금융보안원, 연 2회 사이버 침해사고 모의훈련 의무화 및 제로트러스트 도입 권고",
+    summary: "금융보안원이 사이버보안 가이드라인을 전면 개정하며 제로트러스트 아키텍처 도입과 연 2회 이상 모의 침해훈련을 권고했다. 전반적인 사이버보안 수준은 개선세를 보이고 있다.",
+    keypoints: ["제로트러스트 아키텍처 도입 권고 및 지원 체계 마련", "연 2회 이상 실전형 사이버 침해사고 모의훈련 의무화", "클라우드 전환 금융사 대상 보안 점검 강화"],
+    implication: "모의훈련 의무화에 대비해 훈련 계획을 상반기 중 수립하고 제로트러스트 전환 로드맵을 마련해야 한다",
+    sources: [
+      {publisher:"금융보안원", title:"2025 금융 사이버보안 가이드라인 전면 개정", url:"https://www.fsec.or.kr"}
+    ],
+    collectedAt: "2026-05-19 08:00"
+  }
+];
+
+// ── 사이트 메타데이터 (collector.py가 자동 업데이트) ──
+const SITE_META = {
+  lastCollect: "2026-05-21 08:00",
+  nextCollect: "2026-05-21 20:00",
+  todayCollect: 3,
+  totalArticles: 24,
+  todayVisitors: 1247,
+  totalVisitors: 38491,
+  tickerTexts: [
+    "금감원, 2분기 스트레스테스트 결과 발표 예정",
+    "바젤4 자본규제 최종 이행 가이드라인 배포",
+    "ESG 공시 의무화 시행령 입법예고",
+    "AI 기반 이상거래탐지시스템 도입 확대"
+  ]
+};
+
+// ── 렌더링 ──
+function levelTag(level) {
+  if (level === "고") return "tag-red";
+  if (level === "중") return "tag-amber";
+  return "tag-green";
+}
+function accentColor(level) {
+  if (level === "고") return "#c0392b";
+  if (level === "중") return "#d68910";
+  return "#1a7a4a";
+}
+
+function renderCard(item) {
+  const isNew = isToday(item.collectedAt);
+  const srcHtml = (item.sources||[]).map(s =>
+    `<a class="src-item" href="${s.url||'#'}" target="_blank" rel="noopener">
+      <span class="src-pub">${s.publisher||''}</span>
+      <span class="src-title">${s.title||''}</span>
+      <span class="src-icon">↗</span>
+    </a>`
+  ).join('');
+
+  return `
+  <article class="news-card" data-level="${item.level}" data-cat="${item.category}">
+    <div class="card-accent" style="background:${accentColor(item.level)}"></div>
+    <div class="card-body">
+      <div class="card-meta">
+        <span class="ctag ${levelTag(item.level)}">${item.category}</span>
+        <span class="ctag ${levelTag(item.level)}">리스크 ${item.level}</span>
+        ${isNew ? '<span class="cnew">NEW</span>' : ''}
+        <span class="ctime">${item.collectedAt||''}</span>
+      </div>
+      <h2 class="card-title">${item.title}</h2>
+      <div class="card-headline">${item.headline}</div>
+      <p class="card-summary">${item.summary}</p>
+      <ul class="card-points">${(item.keypoints||[]).map(k=>`<li>${k}</li>`).join('')}</ul>
+      <div class="card-imp">
+        <span class="imp-label">실무 시사점</span>
+        ${item.implication}
+      </div>
+      ${srcHtml ? `<div class="card-sources"><div class="src-label">📎 출처</div>${srcHtml}</div>` : ''}
+    </div>
+    <div class="card-footer">
+      <span class="cf-date">AI 자동수집 · ${item.collectedAt||''}</span>
+      <div class="cf-actions">
+        <button class="cf-btn" onclick="copyLink()">🔗 링크복사</button>
+      </div>
+    </div>
+  </article>`;
+}
+
+function isToday(dateStr) {
+  if (!dateStr) return false;
+  const today = new Date().toISOString().slice(0,10);
+  return dateStr.startsWith(today);
+}
+
+function renderAll(data) {
+  const container = document.getElementById('newsContainer');
+  if (!data.length) {
+    container.innerHTML = '';
+    document.getElementById('emptyMsg').style.display = '';
+    return;
+  }
+  document.getElementById('emptyMsg').style.display = 'none';
+  container.innerHTML = data.map(renderCard).join('');
+}
+
+// ── 필터 ──
+let currentLevel = 'all';
+let currentCat = 'all';
+
+function filterBy(cat, el) {
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('on'));
+  if (el) el.classList.add('on');
+  currentCat = cat;
+  applyFilter();
+}
+
+function filterByLevel(level, el) {
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
+  if (el) el.classList.add('on');
+  currentLevel = level;
+  applyFilter();
+}
+
+function applyFilter() {
+  const filtered = NEWS_DATA.filter(item => {
+    const levelOk = currentLevel === 'all' || item.level === currentLevel;
+    const catOk = currentCat === 'all' || (item.category||'').includes(currentCat);
+    return levelOk && catOk;
+  });
+  renderAll(filtered);
+}
+
+// ── 검색 ──
+function searchNews() {
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  if (!q) { applyFilter(); return; }
+  const filtered = NEWS_DATA.filter(item =>
+    item.title.toLowerCase().includes(q) ||
+    item.summary.toLowerCase().includes(q) ||
+    item.category.toLowerCase().includes(q)
+  );
+  renderAll(filtered);
+}
+document.getElementById('searchInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') searchNews();
+});
+
+// ── 링크 복사 ──
+function copyLink() {
+  navigator.clipboard.writeText(location.href).then(() => alert('링크가 복사됐어요!'));
+}
+
+// ── 날짜 표시 ──
+function updateDate() {
+  const now = new Date();
+  const days = ['일','월','화','수','목','금','토'];
+  document.getElementById('headerDate').textContent =
+    `${now.getFullYear()}년 ${now.getMonth()+1}월 ${now.getDate()}일 (${days[now.getDay()]})`;
+}
+
+// ── 방문자 카운터 (localStorage) ──
+function updateVisitors() {
+  const todayKey = 'visit_' + new Date().toISOString().slice(0,10);
+  let today = parseInt(localStorage.getItem(todayKey)||'0') + 1;
+  localStorage.setItem(todayKey, today);
+  let total = parseInt(localStorage.getItem('visit_total')||String(SITE_META.totalVisitors)) + 1;
+  localStorage.setItem('visit_total', total);
+  document.getElementById('todayVisit').textContent = today.toLocaleString();
+  document.getElementById('totalVisit').textContent = total.toLocaleString();
+}
+
+// ── 사이드바 데이터 ──
+function loadMeta() {
+  document.getElementById('lastCollect').textContent = SITE_META.lastCollect;
+  document.getElementById('nextCollect').textContent = SITE_META.nextCollect;
+  document.getElementById('todayCollect').textContent = SITE_META.todayCollect + '건';
+  document.getElementById('articleCount').textContent = SITE_META.totalArticles + '건';
+  document.getElementById('lastUpdate').textContent = 'AI 수집 · ' + SITE_META.lastCollect;
+
+  // 티커 업데이트
+  if (SITE_META.tickerTexts && SITE_META.tickerTexts.length) {
+    document.getElementById('tickerText').textContent =
+      SITE_META.tickerTexts.join(' \u00a0·\u00a0 ');
+  }
+}
+
+// ── INIT ──
+updateDate();
+updateVisitors();
+loadMeta();
+renderAll(NEWS_DATA);
+</script>
+</body>
+</html>
