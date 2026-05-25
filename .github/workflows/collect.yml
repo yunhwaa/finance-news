@@ -1,0 +1,65 @@
+name: 매일 자동 뉴스 수집
+
+on:
+  schedule:
+    - cron: '0 23 * * *'   # 매일 한국시간 오전 8시 (UTC 23시)
+    - cron: '0 11 * * *'   # 매일 한국시간 오후 8시 (UTC 11시)
+  workflow_dispatch:        # 수동 실행 버튼도 활성화
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write       # docs/ 에 push 권한
+
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+
+      - name: Python 설치
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 라이브러리 설치
+        run: pip install google-genai
+
+      - name: config.py 생성 (GitHub Secret에서 API 키 주입)
+        run: |
+          cat > config.py << EOF
+          API_KEY = "${{ secrets.GEMINI_API_KEY }}"
+          GEMINI_MODEL = "gemini-2.5-flash"
+          COLLECT_COUNT = 3
+          SCHEDULE_TIME = "08:00"
+          AUTO_GIT_PUSH = False
+          GITHUB_USERNAME = "${{ github.repository_owner }}"
+          REPO_NAME = "${{ github.event.repository.name }}"
+          EMAIL_ENABLED = False
+          EMAIL_SENDER = ""
+          EMAIL_PASSWORD = ""
+          EMAIL_RECEIVER = ""
+          OUTPUT_DIR = "docs"
+          KEYWORDS = [
+            "금융규제 최신 동향 2026",
+            "ESG 금융리스크 규제",
+            "부동산PF 리스크 현황",
+            "가계부채 금융안정",
+            "BIS 바젤4 자본규제",
+            "IFRS9 대손충당금",
+            "금감원 스트레스테스트",
+            "사이버리스크 금융권",
+            "금리리스크 IRRBB",
+            "핀테크 규제 동향",
+          ]
+          EOF
+
+      - name: 뉴스 수집 실행
+        run: python collector.py
+
+      - name: 변경사항 커밋 & 푸시
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git diff --staged --quiet || git commit -m "auto: AI 뉴스 수집 $(date +'%Y-%m-%d %H:%M') KST"
+          git push
