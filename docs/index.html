@@ -254,23 +254,125 @@ body{background:var(--bg);font-family:var(--sans);font-size:13px;min-height:100v
 <script>
 // ── 뉴스 데이터 (collector.py가 자동으로 교체) ──────
 const NEWS_DATA = [
-  {id:0,cat:"규제동향",level:"고",bg:"#1a3a6b",title:"핀테크 규제 격차 해소 및 AI 리스크 대응 강화 방안 발표",hl:"금융당국, 빅테크-금융사 동일기능-동일규제 원칙 강화 추진",summary:"금융당국은 빅테크의 금융 서비스 확대에 따른 리스크 증가에 주목하며 전통 금융회사와의 규제 격차 해소를 위한 정책을 추진하고 있다. AI 기술 발전에 따른 사이버 공격 위협 증가에 대비해 금융권의 선제적 위험 관리 체계 구축도 강조했다.",points:["빅테크-금융사 규제 격차 시스템 리스크 우려 증대","AI 기반 사이버 공격 대비 자율 보안체계 전환 요구","고위험 상품·불법 금융광고 소비자 보호 강화"],imp:"AI 신기술 리스크에 대한 내부 통제 및 보안 시스템 고도화 필요",sources:[{publisher:"금융위원회",title:"핀테크·디지털금융 규제 혁신 방안",url:"https://www.fsc.go.kr"},{publisher:"금융감독원",title:"AI 활용 금융서비스 리스크 관리 가이드라인",url:"https://www.fss.or.kr"}],collectedAt:"2026-05-21 08:00"},
-  {id:1,cat:"ESG",level:"중",bg:"#1a5c35",title:"ESG 공시 의무화 확대 및 기후 리스크 스트레스테스트 도입",hl:"금감원, 자산 2조 이상 금융사 기후 리스크 정기 점검 의무화",summary:"금융당국이 ESG 공시 의무화 범위를 확대하고 기후 리스크를 반영한 스트레스테스트를 도입할 예정이다. 탄소 배출량 및 기후 관련 리스크 관리 체계 구축이 시급해졌다.",points:["2026년부터 자산 2조 원 이상 금융사 ESG 공시 의무화","기후 시나리오 기반 스트레스테스트 연 1회 실시 의무","탄소중립 포트폴리오 전환 계획 제출 요구"],imp:"ESG 데이터 수집 체계와 기후 리스크 측정 모델을 조기 구축해야 한다",sources:[{publisher:"금융감독원",title:"기후 리스크 관리 및 ESG 공시 로드맵",url:"https://www.fss.or.kr"}],collectedAt:"2026-05-20 08:00"},
-  {id:2,cat:"사이버리스크",level:"저",bg:"#4a2a7a",title:"금융권 사이버보안 가이드라인 업데이트 및 모의훈련 의무화",hl:"금융보안원, 연 2회 사이버 침해사고 모의훈련 의무화 권고",summary:"금융보안원이 사이버보안 가이드라인을 전면 개정하며 제로트러스트 아키텍처 도입과 연 2회 이상 모의 침해훈련을 권고했다.",points:["제로트러스트 아키텍처 도입 권고 및 지원 체계 마련","연 2회 이상 실전형 사이버 침해사고 모의훈련 의무화","클라우드 전환 금융사 대상 보안 점검 강화"],imp:"모의훈련 계획 상반기 중 수립 및 제로트러스트 전환 로드맵 마련 필요",sources:[{publisher:"금융보안원",title:"2025 금융 사이버보안 가이드라인 전면 개정",url:"https://www.fsec.or.kr"}],collectedAt:"2026-05-19 08:00"},
-  {id:3,cat:"리스크",level:"고",bg:"#7a1a1a",title:"부동산 PF 리스크 확산 및 금융권 건전성 점검 강화",hl:"금감원, PF 대출 부실화 대비 충당금 적립 지도 강화",summary:"부동산 PF 시장의 리스크가 금융권 전반으로 확산될 우려가 커지면서 금감원이 선제적 건전성 관리에 나섰다.",points:["PF 대출 연체율 상승 및 사업장 분양률 저하","충당금 적립 기준 강화 및 일정 앞당김","부실 PF 사업장 구조조정 촉진 방안 검토"],imp:"금융기관은 PF 포트폴리오 리스크 재점검 및 충당금 적립률 상향 검토 필요",sources:[{publisher:"금융감독원",title:"부동산PF 건전성 관리 강화 방안",url:"https://www.fss.or.kr"}],collectedAt:"2026-05-18 08:00"},
-  {id:4,cat:"규제동향",level:"중",bg:"#1a4a6b",title:"가계부채 관리 강화 및 DSR 규제 2단계 시행",hl:"금융위, DSR 40% 규제 적용 범위 전 금융권 확대",summary:"정부가 가계부채 연착륙을 위해 DSR 규제를 강화하고 전 금융권에 걸쳐 일관된 대출 관리 기준을 적용한다.",points:["DSR 40% 규제 전 금융권 확대 적용","스트레스 DSR 도입으로 금리 상승 리스크 반영","비은행권 가계대출 모니터링 강화"],imp:"대출 영업 전략 전면 재검토 및 리스크 관리 체계 재정비 필요",sources:[{publisher:"금융위원회",title:"가계부채 관리 강화 방안",url:"https://www.fsc.go.kr"}],collectedAt:"2026-05-17 08:00"},
-  {id:5,cat:"ESG",level:"저",bg:"#1a5a3a",title:"녹색금융 활성화 및 ESG 채권 발행 가이드라인 정비",hl:"금융위, 그린본드·소셜본드 검증 체계 표준화 추진",summary:"금융당국이 녹색금융 활성화를 위해 ESG 채권 발행 및 검증 절차를 표준화하고 그린워싱 방지 체계를 강화한다.",points:["ESG 채권 외부 검증 의무화 및 기준 강화","그린워싱 방지 가이드라인 제정 추진","녹색금융 상품 세제 혜택 확대 검토"],imp:"ESG 채권 발행 시 검증 프로세스 조기 내재화 및 공시 체계 정비 필요",sources:[{publisher:"금융위원회",title:"녹색금융 활성화 방안",url:"https://www.fsc.go.kr"}],collectedAt:"2026-05-16 08:00"}
+  {
+    "id": 0,
+    "cat": "ESG 금융",
+    "level": "고",
+    "bg": "#1a3a6b",
+    "title": "글로벌 ESG 규제 본격화 및 국내 대응 과제",
+    "hl": "2026년부터 글로벌 ESG 규제가 본격 시행되며, 국내 기업들은 공시 의무화 및 공급망 실사 강화에 대한 철저한 준비가 요구됩니다.",
+    "summary": "2026년부터 유럽의 CSRD, 미국의 캘리포니아 기후 공시법 등 주요 글로벌 ESG 규제가 본격화됩니다. 특히 공급망 실사 의무가 확대되어 협력사까지 ESG 데이터 요구가 강화되고 있으며, '그린워싱' 방지를 위한 검증 가능한 데이터와 법적 검토의 중요성이 커지고 있습니다. 국내에서도 지속가능성 공시 의무화가 추진 중이나, 구체적인 시행 시기와 대상은 아직 불확실한 상황입니다.",
+    "points": [
+      "유럽, 미국 등 주요국에서 2026년부터 ESG 공시 및 실사 규제가 본격 시행됩니다.",
+      "공급망 전반에 걸친 ESG 데이터 요구가 강화되며, '그린워싱' 방지를 위한 데이터 신뢰성과 검증이 핵심 과제로 부상하고 있습니다.",
+      "한국은 ESG 공시 의무화 로드맵을 마련 중이나, 글로벌 동향과 국내 기업의 준비 상황을 고려한 신중한 접근이 필요합니다."
+    ],
+    "imp": "기업들은 ESG를 단순한 평판 관리가 아닌 생존과 직결되는 핵심 요소로 인식하고, 제품 설계, 공급망 운영 체계 등 전사적 사업 프로세스를 혁신해야 합니다. 특히 데이터 기반의 투명한 공시와 내부 통제 시스템 구축이 시급하며, 협력사와의 ESG 역량 강화 협력도 중요합니다.",
+    "sources": [
+      {
+        "publisher": "법률신문",
+        "title": "2025년 하반기, 기업이 주목해야 할 주요 글로벌 ESG 공시 규제 동향",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfe4ab5nqVdjLQcidigIv1H3hzHG60yE0uTLJ4oyLgqa-9ciKdJnnmc8T6wKlaQmN9AAPWBoOF-GhlPknmMzqIcQxFVcnteGB6CRqauPjWWvJGrD-4W3hx2JWzWFdBA9Mrh2NqZ7JlOGy9HFJx7HJK0MkpqtJEMQc"
+      },
+      {
+        "publisher": "머니투데이",
+        "title": "ESG 공시 의무화, 속도보다 준비가 우선",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHt7T_ipfgir9PWBcyDcOg3zlMZWfd3HmQI94Y2dhq-9NZSm4OHHzDJdbq34klM0f0VC6n4EfSfxqkButiBt_KG6aCMLSSq_TTJa_OF3Osr7Ktr82QFCR0a9zSLo5b3xyEHYXZX8qsHUR8fjGAhaDu5EuxZRYS1QQ"
+      },
+      {
+        "publisher": "한국ESG컴플라이언스신문",
+        "title": "2026년 ESG 10대 뉴스: 규제의 파도를 넘어 생존과 경쟁력의 시대로",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYG3vs-Ue7MCZmM_HfthHNt_qFNQE5ubeXAc4HPpQyt5boOYjh9rjes0_vwLG9_RPS0uNpCqzzyOMX2flXTq6QIbWfDxAHCBPvZWuJMIYnfQ"
+      }
+    ],
+    "collectedAt": "2026-05-26 00:06"
+  },
+  {
+    "id": 1,
+    "cat": "부동산 금융",
+    "level": "고",
+    "bg": "#3a1a6b",
+    "title": "부동산PF 부실 정리 가속화 속 지역별 양극화 심화",
+    "hl": "금융권 PF 연체율이 하락하며 부실 정리가 진행 중이지만, 비수도권 리스크는 여전하며 중동발 불확실성이 추가 변수로 작용하고 있습니다.",
+    "summary": "금융권 부동산PF 연체율이 지난해 말 3.88%로 하락하는 등 건전성이 개선되고 있으며, 18조 5천억원 규모의 부실 PF 사업장이 정리·재구조화되었습니다. 그러나 저축은행 등 제2금융권의 브릿지론 연체율은 여전히 30% 내외로 높은 수준을 유지하고 있으며, 특히 비수도권 PF 사업장의 부실 적체가 심화되는 등 지역별 양극화가 뚜렷합니다. 중동 정세 불안에 따른 공사비 상승 및 원자재 수급 불안정은 PF 사업의 불확실성을 가중시키는 요인으로 지목됩니다.",
+    "points": [
+      "금융권 PF 연체율이 하락하고 부실 사업장 정리가 진행되며 건전성이 개선되고 있습니다.",
+      "제2금융권 브릿지론의 높은 연체율과 비수도권 PF 부실 심화 등 지역별 양극화가 주요 리스크로 남아있습니다.",
+      "중동 리스크로 인한 공사비 상승 및 원자재 불안정 등 외부 요인이 PF 시장의 불확실성을 키우고 있습니다."
+    ],
+    "imp": "금융기관은 PF 대출의 건전성 관리를 강화하고, 특히 취약 업권 및 지역에 대한 면밀한 모니터링이 필요합니다. 건설업계는 유동성 확보와 사업성 재평가를 통해 리스크에 선제적으로 대응해야 하며, 정부는 PF 건전성 제도 개선과 함께 시장 연착륙을 위한 다각적인 지원 방안을 모색해야 합니다.",
+    "sources": [
+      {
+        "publisher": "조선비즈",
+        "title": "부동산PF 부실 18.5조원 정리...중동 리스크 변수 주시",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_EgbsZLWqEb9WTxj-QGVPTmyiyXI0rnGIy5dIaIQAbPYbTX-grPAxXEcK2Vi32qlO6h_wgBxf0A7gXuU6Z1caA3wa4JJQt1jNqnbWW3LVsugRl6C5xLjD94C-qbBimZ1fLKXeBiC8yMH3qdBk4vhxAwYlRInWpsz2p8QjQg9GECL4jg-jFA=="
+      },
+      {
+        "publisher": "머니스토리",
+        "title": "2025년 부동산 PF 위기 완전 진단: 연체율·프로젝트 리츠·투자 대처전략 총정리",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFboZubHwBYOSKzS4o1-j0tMUN9uZdbUmCQ24PuMqqs6SFnDpABuRdgDBck06xdDiSmX-xsJzZWtcXheS0FptJH5d5UQW8InEm8vi0U54BE_2GlXT-qk7qjIckLvo1dXRVN-9HBKBGBFucq4hsfaVfBLXPX6QIz2J0lJE68yYmrLAciBqouoV1BwugwGLN3InFgRgFANnWAG0bhuB2-a3sqEGWIPrTHjJNxLGGKCmDV0Qw4EU9UP207BmP8jLlKYKxUror3O8kJn5piPiptPSr1vitt5ADU7sbKaJBG2ZKqBE2z5zmz1W2y2P3OV9tbFI6HjVhH8GkHLotp7t4toIvFUzNCrB3ep7kSoj_nhcNLZkxB1Y6BWwnPoP-xAYAPVsKqUlsP74d2jMrsYUylz-eLfLilfMs633ZK8rE46oJxnZH0tRB5H85kBekufy4nac56gSVxBZSySw8ydm6tlHmOdCZHTtevHvcvtekQocKJO2ffVPOqr_GCFbQtKGtJ"
+      },
+      {
+        "publisher": "아주경제",
+        "title": "부동산PF 부실 정리, 지역별 온도차…비수도권 리스크 '현재진행형'",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg3D4k7_36EqivRw2h1-PGLEPgFat1j8cdWhgg4y5lAA0ISiBg0tVGY0LiLM4-sxg0_3mDwf7nKI0O4YLcjLrDPxRUtPPcckuG5tGtIIMaVbc3f-PmPthbEgch-kWG0nH0tuKmbYiwxOc"
+      }
+    ],
+    "collectedAt": "2026-05-26 00:06"
+  },
+  {
+    "id": 2,
+    "cat": "가계 금융",
+    "level": "고",
+    "bg": "#6b3a1a",
+    "title": "가계부채 역대 최대치 경신 및 2금융권 풍선효과 심화",
+    "hl": "가계부채가 역대 최대치에 육박하며 2금융권 대출이 급증하는 '풍선효과'가 나타나 금융 안정에 대한 우려가 커지고 있습니다.",
+    "summary": "국내 가계부채 규모가 1993조원에 달하며 역대 최대치를 경신했습니다. 정부의 은행권 대출 규제 강화로 인해 시중은행 문턱을 넘지 못한 자금 수요가 저축은행, 상호금융, 카드사 등 제2금융권으로 이동하는 '풍선효과'가 뚜렷해지고 있습니다. 제2금융권 대출은 금리가 상대적으로 높아 차주의 상환 부담을 가중시키고 취약차주의 부실 위험을 키울 수 있다는 우려가 제기됩니다. 금융당국은 2026년 가계부채 증가율 목표를 1.5%로 설정하고, 다주택자 주택담보대출 만기 연장 제한 등 강력한 관리 방안을 시행하고 있습니다.",
+    "points": [
+      "가계부채가 2000조원에 육박하며 사상 최대치를 기록했습니다.",
+      "은행권 규제 강화로 대출 수요가 제2금융권으로 이동하는 '풍선효과'가 심화되고 있습니다.",
+      "정부는 가계부채 증가율 목표를 1.5%로 설정하고 다주택자 대출 규제 등 강력한 관리 방안을 추진 중입니다."
+    ],
+    "imp": "가계는 고금리 장기화에 대비하여 부채 상환 계획을 면밀히 검토하고, 특히 제2금융권 대출 이용 시 금리 부담을 신중하게 고려해야 합니다. 금융기관은 취약차주에 대한 리스크 관리를 강화하고, 정부는 가계부채 총량 관리와 함께 취약계층 금융 안전망 강화 및 부동산 시장 안정화 정책을 병행해야 합니다.",
+    "sources": [
+      {
+        "publisher": "내외뉴스통신",
+        "title": "[가계부채] 가계빚 1993조원 역대 최대…은행 규제에 2금융권 대출 풍선효과 확산",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsv1AEnOe5QwDJbT_QVRtg9maQyV1EisUN5y3_DYp7tB1abeEFlf11HCCJWFAozT2P-e1v8o4YM11ZXglswhzNVPzK6v8qqqG806LB5GloMYATALILIbkWLi-1rZ6gsl6CRok1J_ggp78v1kZYPPEo9IQd-AFrNg=="
+      },
+      {
+        "publisher": "조선일보",
+        "title": "가계부채 증가율 1.5%로 억제...하반기에 대출 절벽 우려",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-kUNKLwJMlcuyNTFXd-bAq-yMTCyjCVJmJ7Ri9ndQ5odEgWUHBnKwFwjGMBcnfITGRVIoTiP8CdMwV8GI-m6640sLlYGHPlHHH_6vhu8hKoLmgvZuUsEHng6D8IZ9K04bINuvfT22Rnw5U-9q5QANE_pYTpfDHBbcbFgqQQUypda5z4EMXHg3w5Wz6HZB1qA=="
+      },
+      {
+        "publisher": "헤럴드경제",
+        "title": "1분기 가계부채 13조 늘어…은행 규제 '풍선효과'에 2금융↑",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_dREnaE6Dgl0OqY7aKugmVrwMsUZVJGuRtot0S1-7oCq6_BXooSQbuC-GDdNbojswccn7HXX9jk6PUPKUZ1Fk5z5_kuhE3Q9rYpagOoTeonkeNKR58GudmhB1ickA977sjweoCZG"
+      }
+    ],
+    "collectedAt": "2026-05-26 00:06"
+  }
 ];
 
 // ── 사이트 메타 (collector.py가 자동 교체) ──────────
 const SITE_META = {
-  lastCollect:"2026-05-21 08:00",
-  nextCollect:"2026-05-21 20:00",
-  todayCollect:3,
-  totalArticles:6,
-  market:{kospi:"2,847 ▲",usdkrw:"1,328 ▼",bond:"3.42%",rate:"3.50%"},
-  keywords:["#바젤4","#ESG공시","#PF리스크","#AI규제","#가계부채","#IFRS9","#사이버","#IRRBB","#DSR","#핀테크"],
-  todayWord:"오늘도 AI가 금융 리스크 뉴스를 수집했어요. 함께 관리해요 ✦"
+  "lastCollect": "2026-05-26 00:06",
+  "nextCollect": "20:00",
+  "todayCollect": 3,
+  "totalArticles": 3,
+  "market": {
+    "kospi": "수집중",
+    "usdkrw": "수집중",
+    "bond": "수집중",
+    "rate": "3.50%"
+  },
+  "keywords": [
+    "#ESG금융",
+    "#부동산금융",
+    "#가계금융"
+  ],
+  "todayWord": "2026년부터 글로벌 ESG 규제가 본격 시행되며, 국내 기업들은 공시 의무화 및 공급망 실사 강화에 대한 철저한 준비가 요구됩니다."
 };
 
 // ── 상태 ─────────────────────────────────────────────
