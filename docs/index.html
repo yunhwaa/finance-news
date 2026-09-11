@@ -256,99 +256,134 @@ body{background:var(--bg);font-family:var(--sans);font-size:13px;min-height:100v
 const NEWS_DATA = [
   {
     "id": 0,
-    "cat": "회계/감독",
-    "level": "중",
+    "cat": "부동산 금융",
+    "level": "고",
     "bg": "#1a3a6b",
-    "title": "IFRS9 도입 후 은행 대손충당금 적시 인식 영향 분석",
-    "hl": "IFRS9 도입 이후 은행의 대손충당금 적시 인식으로 재무상태 및 법인세 부담에 변화가 나타나고 있습니다.",
-    "summary": "한국금융연구원의 분석에 따르면, 2018년 IFRS9 시행 이후 금융상품 분류 기준 단순화와 손상 인식 적시성 강화가 은행업의 회계처리 및 손실 인식에 영향을 미쳤습니다. IFRS9 전환 시점인 2017년 말 대손충당금 설정 비율이 유의미하게 증가했으며, 이는 2018년 경영실적 및 재무상태에 일시적인 부정적 영향을 주었습니다. 초기에는 법인세 부담이 감소했으나, 장기적으로는 일시적 효과 반전으로 인해 법인세 부담이 증가할 것으로 예상됩니다.",
+    "title": "부동산PF 리스크 현황: 총량 감소 속 양극화 심화",
+    "hl": "전체 PF 익스포저는 감소했으나, 장기 미회수 PF가 급증하며 시장 양극화가 심화되고 있습니다.",
+    "summary": "금융권 부동산 프로젝트파이낸싱(PF) 익스포저 총량은 2024년 6월 216.5조원에서 2026년 3월 169.8조원으로 감소하며 외형적 지표는 개선되는 모습을 보였습니다. 그러나 한국신용평가에 따르면 취급 후 4년 이상 회수되지 않은 '한계 PF'는 2024년 6월 2.8조원에서 2026년 3월 13.1조원으로 4배 이상 급증하여 전체 PF 익스포저의 26%를 차지했습니다. 이 한계 PF의 97%가 중·고위험 자산(비주거시설, 브릿지론 등)에 집중되어 있어 PF 시장의 양극화가 심화되고 있다는 지적입니다. 금융당국은 부실 사업장 정리 및 정상 사업장 자금 공급을 지속하고 있으며, 2026년 6월까지 한시적 금융규제 완화 조치를 연장하고 2027년부터 PF 사업비 대비 자기자본비율을 단계적으로 상향하는 제도 개선을 추진할 예정입니다.",
     "points": [
-      "IFRS9 도입으로 대손충당금 설정 비율이 증가하며 손실 인식이 적시화되었습니다.",
-      "초기에는 법인세 부담이 감소했으나, 장기적으로는 증가할 가능성이 있습니다.",
-      "금융자산 계상액에는 제한적 영향, 대손충당금 적시 인식으로 인한 감소액이 주효했습니다."
+      "전체 PF 익스포저는 감소했으나, 장기 미회수 '한계 PF'는 급증하며 시장 양극화 심화",
+      "한계 PF의 대부분은 중·고위험 자산에 집중되어 있으며, 본PF 단계로 위험 전이 우려",
+      "금융당국은 부실 정리 및 정상 사업장 지원 지속, 2026년까지 규제 완화 연장 및 2027년부터 자기자본비율 상향 추진"
     ],
-    "imp": "IFRS9 기준에 따른 대손충당금의 적시 인식은 은행의 재무 건전성 지표와 법인세 부담에 지속적인 영향을 미치므로, 금융기관은 이에 대한 장기적인 재무 계획과 세무 전략을 수립해야 합니다.",
-    "sources": [
-      {
-        "publisher": "KDI 경제교육·정보센터",
-        "title": "은행 대손충당금 적시 인식에 따른 영향분석 | 국내연구자료",
-        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAiXhiWKVQXjzUHYZLYHBDyr7esJuMvbCqP3x6z3ZVeDTkiomIoHmskeJX2TSQdkHi9z_bM2cjSYJ8yJdI6vpz9WOUeWN2gVwpl1Fjqe90YecYthrxEp9jiMkcXbVoWQMv-zv-jn7yd3R_1Vvk6pD1AlTadqRA"
-      }
-    ],
-    "collectedAt": "2026-09-11 00:49"
-  },
-  {
-    "id": 1,
-    "cat": "사이버보안",
-    "level": "고",
-    "bg": "#3a1a6b",
-    "title": "금감원, AI 악용 해킹 기승에 금융권 IT 기본통제 강화 주문",
-    "hl": "최첨단 AI를 악용한 사이버 위협이 증가함에 따라 금융감독원이 금융권에 IT 기본통제 준수와 전사적 대응 체계 고도화를 촉구했습니다.",
-    "summary": "금융감독원은 최근 프런티어 AI를 악용한 사이버 위협이 급증하자 전 금융권 정보보호최고책임자(CISO) 간담회를 개최하여 대비 태세 점검에 나섰습니다. AI를 활용한 해킹은 보안 취약점의 신속한 탐지뿐 아니라 다수의 금융회사를 대상으로 한 자동화된 대량 공격까지 가능하여 금융 보안 체계를 강화해야 하는 상황입니다. 금감원은 경영진의 적극적인 관심과 참여를 통해 IT 자산 식별·관리 체계 구축, 대규모 보안패치 대비 등 핵심 과제를 완비하고, IT 기본통제 운영 실태를 중점적으로 검사할 계획입니다.",
-    "points": [
-      "프런티어 AI를 악용한 사이버 공격이 고도화되고 자동화되어 금융권에 심각한 위협이 되고 있습니다.",
-      "금융감독원은 전 금융권 CISO 간담회를 통해 IT 기본통제 강화와 전사적 대응 체계 고도화를 주문했습니다.",
-      "경영진의 적극적인 참여와 예산·인력 확충을 통한 IT 보안 강화가 강조되었습니다."
-    ],
-    "imp": "금융기관은 AI 기반의 새로운 사이버 위협에 대응하기 위해 경영진 주도하에 보안 예산과 인력을 확충하고, IT 기본통제를 철저히 준수하며, AI를 활용한 보안 기술 고도화를 통해 선제적인 방어 체계를 구축해야 합니다.",
-    "sources": [
-      {
-        "publisher": "일간NTN",
-        "title": "'프런티어 AI' 악용 해킹 기승…금감원, 금융권 IT 기본통제 철저 주문",
-        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBfTpu9d5u4OPtxtHSj0-OoPzYCD4jGfsvx2ce3cn_aTt3QJ5foiHqTJVTQKy5eJjlPVsWVa-pqpkCd7ccjHQyrbJw6IlQxikE7JteQItlZyrMP7UI58ZpKLNhZFp335i6sFyDb17MFGh3A06iUpVUZQBPkSk="
-      },
-      {
-        "publisher": "메트로신문",
-        "title": "AI 해킹에 금융권 '비상'…금감원, 전 금융권 CISO 소집",
-        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpM-qHoE87HIMIXlv5TM2ZunbuozurcwBF-wZF9pB0yb7XP91BLbQie5333Iu2msId5z23EvjAbQ8Okpd_HqZ81_PEKgsbjsl8zqF0G3VtdKyz34xzXrh4C_KqW7V1EXzhalsziJQIT1Gcv4Liyg=="
-      },
-      {
-        "publisher": "뉴스1",
-        "title": "\"프런티어 AI 기반 보안 위협 대비해야\"…전 금융권 CISO 간담회",
-        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjaabNfoy25yRM8g7xZn_TbUSE-Ey2GJQ2tuOHe8bXOezVylrv5Z_uQ0x1Yeb9voy1xEvbvJkQ6YPpgostwb3N93CV7n1wAB9fW_Q9YfZDZIUUMy8v8ALx4DC1OhACWOSLPoTO4sxYxPtx2U6Su30="
-      }
-    ],
-    "collectedAt": "2026-09-11 00:49"
-  },
-  {
-    "id": 2,
-    "cat": "부동산/금융",
-    "level": "고",
-    "bg": "#6b1a3a",
-    "title": "부동산PF 총량 감소에도 '한계 사업장' 급증, 리스크 양극화 심화",
-    "hl": "부동산 PF 시장의 총량은 감소했지만, 장기간 회수되지 않는 '한계 PF'가 급증하며 금융권의 신용위험 양극화가 심화되고 있습니다.",
-    "summary": "한국신용평가에 따르면 신사업성 평가 기준 도입 이후 부동산 PF 총량은 감소했으나, 취급 후 4년 이상 회수되지 않은 '한계 PF' 잔액이 13조1000억원으로 급증하여 전체 PF의 26%를 차지하고 있습니다. 신규 PF는 우량 자산 중심으로 재편되어 포트폴리오의 평균적인 질은 개선되었지만, 기존 한계 사업장의 부실 정리가 지연되면서 위험의 양극화가 심화되고 있습니다. 특히 토지, 비주거 자산 및 비서울 아파트 등 회수가 어려운 자산군에 한계 PF의 97%가 집중되어 있으며, 일부 금융사의 경우 추가 충당금 부담이 연간 당기순이익을 상회할 수 있다는 분석입니다.",
-    "points": [
-      "부동산 PF 총량은 감소했으나, 4년 이상 회수되지 않은 '한계 PF'가 13조1000억원으로 급증했습니다.",
-      "신규 PF는 우량 자산 위주로 재편되었지만, 기존 한계 사업장의 부실이 누적되며 시장 양극화가 심화되고 있습니다.",
-      "한계 PF는 주로 회수가 어려운 토지, 비주거 자산, 지방 아파트 등에 집중되어 있으며, 일부 금융사는 상당한 추가 충당금 부담에 직면할 수 있습니다."
-    ],
-    "imp": "금융기관은 부동산 PF 포트폴리오의 질적 개선 노력과 더불어, 장기 미회수 한계 사업장에 대한 면밀한 모니터링과 선제적인 손실 인식 및 충당금 적립을 통해 잠재적 신용위험에 대비해야 합니다. 특히 지방 및 비우량 자산에 대한 익스포저 관리가 중요합니다.",
+    "imp": "PF 시장의 외형적 지표 개선에도 불구하고, 개별 사업장의 부실 위험은 여전히 높아 금융기관의 선별적 리스크 관리와 선제적 충당금 적립이 중요합니다. 특히 중소형 건설사 및 비우량 자산에 대한 익스포저 관리가 필요하며, 정부의 제도 개선 및 지원책 효과를 지속적으로 모니터링해야 합니다.",
     "sources": [
       {
         "publisher": "조선비즈",
         "title": "부동산PF 부실 18.5조원 정리...중동 리스크 변수 주시",
-        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9Zi0NiA6LLyf9qii0a1jh99HkdCM_AoBprOxcMuO63-FsTYFgs2zNPcfb6qY18mkRnzKVOMxRdjzKuU4YbaSF98qiFhMb4kIVVAx8_xT9qRDYurXFkeE8OKMdM1_pTr8GfvqV1BAFinsl14h_M92S9eMF3SXAAWcGpFm-83MRxgcA9oVzkw=="
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_4OISij_lCXPpXXBzqyEhacq25wlhSelBqp23Vm8Kfrv_6nd-Kcsfvz5HuP8CubgtZOpeR9xUlQbJGn5G7v0A8Bt4VSqT9ygOX9X_8EeZF8-6Kr-3UzIP7i5ElV14INPLLmBUTf66jT254RtSo4h7rHgWdEKdoH2iwL21jw6IdVlKIOv"
+      },
+      {
+        "publisher": "EBN",
+        "title": "[현장] \"PF 총량 줄었지만 위험은 안 줄었다\"…한신평, 일부 금융사 부실 부담 경고",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEo32pLoe-sah5Jy6x4-Ux291bMa4dqjJ5WNnfx_xv7e9KFpwfsjSM97i7HoYpxITAtBjN6FpTylIEEYpf2lpn2W45wD5w6C_sTMsSteRHkyGooYtDfLll3eBbs5SvYDyonI_AnR8Okotos0BpBha1OOhQxn4Wa-A0"
+      },
+      {
+        "publisher": "금융위원회",
+        "title": "2025년 9월 말 부동산 PF 잔액·연체율·익스포져",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZHIxt-QAagEr1NMgkjWb22G951zRck0qmj715rIgQr92Ij0dBMv8wjtY3J6gffKqe7x9Yzwd7isFu8-UxZpxLy6mAowCWxCUScJAhDTtmGMz4BXrHG7s7yckEX8WR"
       },
       {
         "publisher": "딜사이트",
         "title": "한신평 \"우량사업만 돈 몰렸다…4곳 중 1곳 한계 PF \"",
-        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG08JwmsE2Vlg2355uMnq4XNrTfO8wUwXsZm2Ldo7TMSEeinWLZ9sE2tsSVClFlFTuMu4U54XF0ZK-dd7UHRJAVA-KWOXrFH639TEpoGWGIGSbx5j9Tr7TKHACPna-K-IGd"
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGK0z8IIf0IGNWu-STbR4MzcVzwwQII4KgUgMrnlVKM2-GUnZaPpsPXQHRhJy0SwremwywvjfpQGlNORZCtbIEN5q9xLI83UdrV52Xvi__9vORNg3wUaaMbUZ8_ANkPi_A="
       },
       {
-        "publisher": "마켓인",
-        "title": "PF 총량 감소 이면엔 '한계 사업장' 수두룩…금융권 신용위험 여전",
-        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMjpxRZWHW7S_u0mBKUqvfTxpwo0satR02OknAeKexMyuRRMaMnrvD-Dme8fO-s-I7K_fKfEnSzlVzI60_GorcGytnDVE_RVuXcro8YjqUoC2XxEACyS4kEjqeX0_tsVcpUZXGYNlklYXG63y9OZIXcgtNvNeflN2EW0g="
+        "publisher": "뉴스토마토",
+        "title": "부동산 PF 연착륙 지표 개선 착시…국감 쟁점 예고",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVCraxi5vXjcZPnzNA6R2IxhaQRbDIx1F6E2Jng0G1--s7-H7tdsdnBAFWz_TNNpyiejXADxQ10YgQMgaioXq32lsRY9oF6TYQt-aMhZCrAP46nA1qy_suigNq-K_8dNVfaj8hwtWWlXnT1_nO"
       }
     ],
-    "collectedAt": "2026-09-11 00:49"
+    "collectedAt": "2026-09-11 14:44"
+  },
+  {
+    "id": 1,
+    "cat": "은행 자본규제",
+    "level": "중",
+    "bg": "#3a1a6b",
+    "title": "BIS 바젤3 최종안(바젤4) 국내외 도입 및 영향",
+    "hl": "바젤3 최종안(일명 바젤4)이 2026년 완전 도입을 목표로 하며, 은행의 자본 건전성 강화와 기업 대출 확대를 유도합니다.",
+    "summary": "바젤위원회는 2008년 글로벌 금융위기 이후 금융 시스템 안정을 위해 바젤3 최종안(일명 바젤4)을 발표했으며, 이는 은행의 자본 건전성과 유동성 강화를 핵심으로 합니다. 특히 은행이 보유한 자산 중 부실 대출에 대한 위험 가중치를 높여 손실 발생 가능성을 줄이는 데 중점을 둡니다. 국내에서는 2020년 2분기부터 신용리스크 산출 방식 개편안이 조기 시행되었으며, 2026년 완전 도입을 목표로 하고 있습니다. 유럽은 2025년 1월부터 바젤3 최종안 이행을 시작했으며, 일부 규제는 2026년 1월 시행으로 연기되었습니다. 이 규제는 기업 대출 비중이 높은 은행의 BIS 비율을 높이는 효과가 있지만, 선박 금융과 같은 특정 분야에서는 자금 조달 비용 상승으로 인한 축소 우려도 제기됩니다.",
+    "points": [
+      "바젤3 최종안(바젤4)은 은행의 자본 건전성 및 유동성 강화를 목표로 하며, 위험 가중치 산정 방식 변경",
+      "국내 2026년 완전 도입 목표, 유럽은 2025년 1월부터 이행 시작 (일부 규제 2026년 연기)",
+      "기업 대출 중심 은행의 BIS 비율 개선 기대되나, 특정 산업 금융 축소 우려 존재"
+    ],
+    "imp": "바젤3 최종안 도입은 은행의 리스크 관리 역량을 강화하고 금융 시스템 안정에 기여할 것입니다. 은행은 강화된 자본 규제에 맞춰 자산 포트폴리오를 조정하고, 특히 기업 대출 확대 등 생산적 금융 지원 역할을 지속해야 합니다. 규제 변화에 따른 자금 조달 비용 증가가 특정 산업에 미칠 영향을 면밀히 분석하고 대응 전략을 수립해야 합니다.",
+    "sources": [
+      {
+        "publisher": "한국경제 생글생글",
+        "title": "경제학 원론 산책 은행 건전성 높여라…바젤3 등 규제 늘었죠",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFM2Yzad9GFhjka3jg6Q0rNu2uro8G9WgDaKdarh4pmlH1b9N8K4tcUAWG7oqwY-ZnqX0iXRnHFlniRg_Vmgtyg4yjjdAAW1GmPwSvta7W8LRC7ys6ibX6WRaTCF6t5n99TKMb-Kt3Xtxc="
+      },
+      {
+        "publisher": "나무위키",
+        "title": "바젤 III",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEH09Q_snexoA0rDY0GiKVUhhsFg-PjQkhdAKLAJ0dshJVEp6cnvG7WoZ6ntQGo4c_P1Oxd2XlEUFqANJajDRxdutsE32lWN2x7X1QNIuGU3bFxebV5QXDn8w-g-nOER0L2dTAVSt4="
+      },
+      {
+        "publisher": "한국해운신문",
+        "title": "기고/바젤Ⅲ 최종안 도입에 따른 선박금융 축소 우려",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLcH1d6_SHFh1_bqNLpKQm-Pl8Bb3Naxk0H2WR7AUNb96bj63prfOpHl_bYmg6Jcaho5q7sdHTCg3GIrvdG-iaLwAmsVxPHOmxuk4GuXN6FJ6gaEDLNPeAUsl-VtQf_OdrIaKL9kKgHAF0TaA_P-oBFpQ5YaW6MVB7zQA="
+      },
+      {
+        "publisher": "금융위원회",
+        "title": "코로나19로 어려운 중소기업 등 실물경제에 대한 은행의 지원 역량을 강화하기 위해 「바젤Ⅲ 최종안」을 '20.2분기부터 조기 시행합니다.",
+        "url": "https://vertexaisearch.google.com/grounding-api-redirect/AUZIYQFmOe0eJvdsTiy68NJLgMuibru5dAlmirvvofdZGkhkaErSuzvhg9sTpg_ipwHY-5L8_eMFQhfJZtfnocvsb0EVrKBI8ftE-zt6JUEgDgKdJZfRJHt0CRvwKOg_jquz6LKX4ZRMu2oq8FqrLI74gNq2ENsAbj6wRJRG9T9xmwWat2m885HORd1ptI6mUbHZ3iw9i-iCMPKx4PPSftHR"
+      }
+    ],
+    "collectedAt": "2026-09-11 14:44"
+  },
+  {
+    "id": 2,
+    "cat": "금리 리스크 관리",
+    "level": "중",
+    "bg": "#6b3a1a",
+    "title": "IRRBB(은행계정 금리리스크) 규제 2026년 재조정 및 시행",
+    "hl": "바젤위원회는 은행계정 금리리스크(IRRBB) 표준에 대한 금리 충격 시나리오를 재조정하고, 2026년 1월 1일부터 개정된 기준을 시행합니다.",
+    "summary": "은행계정 금리리스크(IRRBB)는 은행계정 포지션에 영향을 미치는 금리의 불리한 변동이 은행의 자본 및 수익에 미치는 현재 또는 미래의 위험을 의미합니다. 바젤위원회는 2024년 7월 IRRBB 표준의 금리 충격 시나리오에 대한 목표 조정(targeted adjustments)을 발표했습니다. 주요 변경 사항으로는 보정(calibration)에 사용되는 시계열 확장, 글로벌 충격 요인을 각 통화별 지역 충격 요인으로 대체, 보수성 유지를 위한 충격 요인 결정 시 99.9번째 백분위수 적용 등이 포함됩니다. 이 개정된 IRRBB 표준은 2026년 1월 1일부터 시행될 예정이며, 은행들은 이를 ALCO(자산부채관리위원회) 의사결정, 가격 책정, 모델 거버넌스 및 자본 계획에 반영해야 합니다.",
+    "points": [
+      "IRRBB는 금리 변동이 은행의 자본 및 수익에 미치는 위험으로, 바젤2의 Pillar 2 규제에 포함",
+      "바젤위원회, 2024년 7월 IRRBB 표준의 금리 충격 시나리오 재조정 발표",
+      "개정된 IRRBB 표준은 2026년 1월 1일 시행 예정, 은행의 리스크 관리 및 의사결정에 영향"
+    ],
+    "imp": "2026년부터 시행되는 재조정된 IRRBB 규제는 은행의 금리 리스크 측정 및 관리에 중요한 변화를 가져올 것입니다. 은행은 새로운 금리 충격 시나리오에 맞춰 내부 모델과 시스템을 업데이트하고, ALCO 기능을 강화하여 금리 리스크를 보다 정교하게 관리해야 합니다. 이는 은행의 수익성과 자본 건전성에 직접적인 영향을 미치므로 철저한 준비가 요구됩니다.",
+    "sources": [
+      {
+        "publisher": "연합인포맥스",
+        "title": "[시사금융용어] 은행계정 금리리스크 (IRRBB)",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJIo_SER6zOMjnhYuqVH9VGyjb-4Q_keCbi8kZoIigKUCFxYytQFW4YSlHv1QBjjR-rUfG_7McT_qb5grMRb26SG8csfpG6VXu1iPwD20ZtcGpPqu5g5ZYJyxl_iqqjwu6lRjldweRDEkS3b1zS4tjbD_KnihRRUcS"
+      },
+      {
+        "publisher": "Global Regulation Tomorrow",
+        "title": "Basel Committee makes targeted adjustments to its standard on IRRBB",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOX9MmBCt8Enyvsu8NyD-I9RakMoHuGZ7CrzZpfZPR3fywscSSGZidQX8Qd7AGlWF33MZeM5WiVRpRIAJQMTud4R_xKMW_Oj9YxNznAp7lkQgYwVO4YEpKSOZUHOUOrNMIzIexK_K2UMtzyRGAro-NpnCLC8iVmiHrPfLY-omdR6JpIU702qrPvkP37Emrb1Qbi5vCUHdiMiPEqeNAptOB8vGPvbPgCGAc"
+      },
+      {
+        "publisher": "KPMG",
+        "title": "The 2026 IRRBB Reset: From Basel Shocks to Bank Decisions",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMtR32JsmSHnEwp2t1NIGK5UcoETqI4J3EjzZPRV48JluUE6VLYvmE1iWAA9Lt6dtcSC7-0Fnd0ldYSuE77KXkR_1GrpYX3sLN6qciHIb5ZDVbfbImZ6V91uG09xoh1Fpbxd9e53lIM_7j1W03d3oWVZaUTVK6xu9kKXbzmqTCkSlTcgPJEvX9NLG3GquRog=="
+      },
+      {
+        "publisher": "Banking.Vision",
+        "title": "Recalibration of IRRBB interest rate shocks - new developments",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEha01giMumUBOY9bWqhxKmCLLkzlVbc3OZVzqHyrISrhLBbS1QehcgLzgP-WY6EKAuTU9cmsxcWVQ3uHPSq8eSwHOqEwn8guI-ztLFTSUS3t-KvgadxQC4v67gIz3naTrlDRHe4fJDT-fmnVIbrTj7Lq_hTrQ=="
+      },
+      {
+        "publisher": "BIS",
+        "title": "Interest rate risk in the banking book - Basel Framework",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8ZN0XHxdqaa3SuROAGw_ggnzYMNqK7Z9k-A-JaqUUZfvTXCwBqeHSTYzzgBDwJWc9-YRaO0oLFaPXfJllmu7Moc-J1w9WTxx40Z53o-SE6THeSHT6BxHBpC2nS2P6nAic-dnaVTByRGWDJiyoE1lSGj4ELL2r6-4UjbONh9-L3pu8sxFgFyrYFsdvaS1tKuU_2IRVW92GlbDkUSch3uuyPjWdSLU="
+      }
+    ],
+    "collectedAt": "2026-09-11 14:44"
   }
 ];
 
 // ── 사이트 메타 (collector.py가 자동 교체) ──────────
 const SITE_META = {
-  "lastCollect": "2026-09-11 00:50",
-  "nextCollect": "20:00",
+  "lastCollect": "2026-09-11 14:44",
+  "nextCollect": "08:00 (내일)",
   "todayCollect": 3,
   "totalArticles": 3,
   "market": {
@@ -358,11 +393,11 @@ const SITE_META = {
     "rate": "3.50%"
   },
   "keywords": [
-    "#회계/감독",
-    "#부동산/금융",
-    "#사이버보안"
+    "#부동산금융",
+    "#금리리스크관리",
+    "#은행자본규제"
   ],
-  "todayWord": "IFRS9 도입 이후 은행의 대손충당금 적시 인식으로 재무상태 및 법인세 부담에 변화가 나타나고 있습니다."
+  "todayWord": "전체 PF 익스포저는 감소했으나, 장기 미회수 PF가 급증하며 시장 양극화가 심화되고 있습니다."
 };
 
 // ── 상태 ─────────────────────────────────────────────
