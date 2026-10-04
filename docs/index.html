@@ -256,101 +256,254 @@ body{background:var(--bg);font-family:var(--sans);font-size:13px;min-height:100v
 const NEWS_DATA = [
   {
     "id": 0,
-    "cat": "금융/경제",
+    "cat": "부동산",
     "level": "고",
-    "bg": "#2c3e50",
-    "title": "한은, 금리 인상으로 물가·집값·가계부채 안정 기대 속 관리 기조 유지",
-    "hl": "한국은행, 두 차례 기준금리 인상으로 물가 및 주택시장 안정과 가계부채 증가세 억제 효과 기대하며 관리 기조 지속 강조.",
-    "summary": "한국은행은 최근 두 차례 연속 기준금리 인상(연 3.00%)이 수입물가 부담 완화, 수도권 주택 가격 상승세 억제, 가계부채 증가세 둔화에 기여할 것으로 전망했다. 특히 명목 GDP 대비 가계부채 비율이 연말 70%대 중후반까지 하락할 것으로 예상되지만, 한은은 누적된 가계부채 위험과 소득 개선의 부문별 온도차를 고려하여 관리 기조를 유지해야 한다고 강조했다. 금융취약성지수(FVI)가 9분기 연속 상승하며 장기 평균 수준에 도달하는 등 금융불균형 위험이 여전히 크다고 평가했다.",
+    "bg": "#1A3A6B",
+    "title": "은행 부동산PF 총여신 20% 제한, 내년부터 한도 규제 시행",
+    "hl": "금융당국, 은행의 부동산PF 신용공여를 총 신용공여의 20% 이내로 제한하는 규제를 2027년부터 시행한다.",
+    "summary": "금융위원회가 은행의 부동산 프로젝트파이낸싱(PF) 관련 신용공여를 총 신용공여의 20% 이내로 제한하는 규제안을 발표했다. 이는 부동산PF 리스크가 특정 금융회사나 업권에 과도하게 쏠리는 것을 방지하기 위한 조치로, 2025년 말 발표된 부동산PF 건전성 제도개선 방안의 후속 정비이다. 해당 규제는 2027년 1월 1일부터 시행되며, 초과하는 은행에는 3년의 경과기간이 부여된다.",
     "points": [
-      "한은, 두 차례 금리 인상으로 물가·집값·가계부채 안정 효과 기대",
-      "명목 GDP 대비 가계부채 비율 연말 70%대 중후반 하락 전망에도 관리 기조 유지",
-      "금융취약성지수(FVI) 9분기 연속 상승, 금융불균형 위험 지속 경고"
+      "은행의 부동산PF 신용공여 한도를 총 신용공여의 20%로 제한.",
+      "2027년 1월 1일부터 시행되며, 초과 은행은 3년 내 해소해야 함.",
+      "부동산PF 리스크의 특정 금융회사 쏠림 방지 및 건전성 제고 목적."
     ],
-    "imp": "금리 인상 기조가 지속될 가능성이 높으며, 가계는 부채 상환 부담 증가에 대비하고 금융기관은 취약 차주 관리를 강화해야 합니다. 부동산 시장은 추가적인 조정 압력을 받을 수 있습니다.",
+    "imp": "은행권은 부동산PF 익스포저 관리를 강화하고, 신규 PF 사업 심사를 더욱 엄격히 할 것으로 예상된다. 이는 PF 시장의 전반적인 건전성 강화에 기여할 수 있으나, 단기적으로는 PF 자금 조달에 어려움을 겪는 사업장이 늘어날 수 있다.",
     "sources": [
       {
-        "publisher": "스페셜경제",
-        "title": "한은 “두 차례 금리 인상, 물가·집값 안정 기대”",
-        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcAOuCc1-xt3BzuyjUHcOZnqciHPkgD3KWgdfdsmN2AysNoCxlXkrvoDGl_20g3WEO6stPsz9zKPwDlX1b2akppS7SvLLmg7YT8fnVijJJuXa68IMgRzY0dOSup-iqsRCyA1Za2o2s9__uxSLbtdlHt5aqyacxxQ=="
-      },
-      {
         "publisher": "연합인포맥스",
-        "title": "[금융안정] 한은 부총재보 \"가계부채 비율 임계치 이하 내려도 관리 기조 유지\"",
-        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpfdyZ7ev-T5ztKyWH5y7jsEJzj9NT6ESlkf0bMOpWQaf6-lCS2ozkOwPVSl6SW56SQM2UOg-wIC68XtHTbIl_47T4FRiaWC5HpXayM80mMNSSnzDoOI-XNUH8lxh-jLGG9X1cf_AodcjCvny0zQC5LWz_jZJkFndnA=="
+        "title": "은행 부동산PF 총여신 20% 넘지 못한다…내년부터 한도 규제",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6mXjH8AXTaktQmwX26q8UrN2937sNpmuLU-LOjo0KTDgmvtJzJ6X_ibTcpFx33TSNQ_d-o77d9T1uLuIErtoAP_J3h3f7Ilvh27l2TBAikBEwZ0GnxU0tX3vLOc3XbVH1J-FeS0rb5_m6QXGLpPTPSXHcUQDUjaSY"
       },
       {
-        "publisher": "조세일보",
-        "title": "GDP가 가계빚 비율 낮췄지만…연체까지 지우진 못했다",
-        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHi4QLGB6bI9vpIs3Mar-8R2HSH4TaJushSeTY2RiX5pJFka3glRn1N4_wCp0EMy-KMDHXrC8zggxHhSQEyr1yT6waG4kzCRrESKCEz7glZv8TC84Fw8lJkZ-sNVwEiLpqOgcWRToT_RXucoJdB"
+        "publisher": "뉴스핌",
+        "title": "인터넷은행도 '채무조정 상담' 등 대면업무 가능...금융위, 규정변경예고",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTCOLWjIJEWzJOZ-qfHwvCaehJFEzNv-1Z_ZtUT3N0G5NvhN5fdIs1CA1oLMjtzIqjbwewY6SzwoNHvON1o5F127pI0GaByEsZXbtBkr-MZSquo5nVf50Apbt4VwQnGLFTbj3t4uG-G1Fo"
       }
     ],
-    "collectedAt": "2026-10-04 02:25"
+    "collectedAt": "2026-10-04 15:35"
   },
   {
     "id": 1,
-    "cat": "금융정책",
+    "cat": "부동산",
     "level": "고",
-    "bg": "#1f3a4e",
-    "title": "금감원, 중동 리스크 대비 전 은행권 스트레스 테스트 및 외화 유동성 점검 강화",
-    "hl": "금융감독원이 중동발 지정학적 리스크에 대응하여 4월 전 은행권 대상 스트레스 테스트를 실시하고 외화 유동성 스트레스 테스트 주기를 월별로 단축하는 등 위기 대응 관리를 강화한다.",
-    "summary": "금융감독원은 중동 지역 긴장 고조로 인한 거시경제 불확실성 확대에 선제적으로 대응하기 위해 4월 중 8개 금융지주와 20개 은행을 대상으로 건전성 점검에 나선다. 이는 향후 도입이 검토 중인 '스트레스 완충자본 제도'의 사전 평가 성격을 띠고 있다. 또한, 금감원은 외화 유동성 스트레스 테스트 주기를 기존 분기별에서 매달로 단축하여 은행권의 외화 유동성 확보 및 위기 대응 능력을 집중적으로 관리할 방침이다. 금융당국은 평가 결과가 미흡한 은행에 선제적인 손실흡수능력 확충을 유도할 계획이다.",
+    "bg": "#2C3E50",
+    "title": "금융권 부동산PF 연체율 10년 만에 최고치, 부실 우려 증폭",
+    "hl": "금융권 부동산PF 대출 연체율이 10년 만에 최고 수준으로 치솟으며 부실 우려가 커지고 있다.",
+    "summary": "올해 1분기 말 금융권 전체 부동산PF 대출 연체율이 4.65%를 기록하며 지난해 말 대비 0.77%포인트 상승, 약 10년 만에 최고치를 기록했다. PF 대출 잔액은 감소하고 있으나, 건설경기 침체 장기화로 부실 우려 사업장은 늘고 정리·재구조화 실적은 줄어든 것으로 나타났다. 특히 저축은행, 증권사 등의 연체율이 높은 수준을 보였다.",
     "points": [
-      "금감원, 4월 전 은행권 대상 스트레스 테스트 실시 (중동 리스크 대비)",
-      "스트레스 완충자본 제도 도입 사전 평가 성격",
-      "외화 유동성 스트레스 테스트 주기를 월별로 단축하여 외화 유동성 관리 강화"
+      "2026년 1분기 말 금융권 PF 대출 연체율 4.65% 기록 (전년 말 대비 0.77%p 상승).",
+      "이는 2016년 3분기 이후 약 10년 만에 최고 수준.",
+      "건설경기 침체 장기화로 부실 사업장 증가 및 재구조화 지연이 원인."
     ],
-    "imp": "은행권은 중동 리스크 등 외부 충격에 대비한 자본 건전성 및 외화 유동성 확보에 더욱 주력해야 하며, 스트레스 테스트 결과에 따라 추가적인 자본 확충 압박을 받을 수 있습니다.",
+    "imp": "금융권 전반의 건전성 악화 우려가 커지며, 특히 비은행권의 리스크 관리가 시급하다. 정부의 추가적인 부실 사업장 정리 및 재구조화 지원 정책이 필요할 수 있다.",
     "sources": [
       {
-        "publisher": "폴리뉴스",
-        "title": "금감원, 4월 전 은행 스트레스 테스트…중동 리스크에 자본확충 압박",
-        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiO4ub_Je_VHP30YAZG5lOrZ3QrggaswG7_YnafRWHPS0Vn2iisOfN0AP1Uu-S071fLXyMaDZGR7Sb02BL4cw_jwZ1rHxcS6Kfwj3oIgzHPdL_HLT6eFlPvUIFvlbzSOMQ52GDly67JcqTafxrP8HN3SYWE22IKD8="
+        "publisher": "뉴시안",
+        "title": "금융권 부동산PF 부실 다시 커졌다…연체율 10년 만에 '최고'",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtbn7vX1QQqeOgCCY4C0WAgsmFRB2FBGacxfVv5A3J1OKFCpbSOs25H7upHgicAnFcVs04ZiVA5IyWIB4j_jxSL_yHD4otHATHIRcLQa4usHumaRsmqu6gHmx6U75g9PXjxx21rYlm_uw0ESVQbf83ZuKQAw"
       },
       {
-        "publisher": "금융소비자뉴스",
-        "title": "금감원, 은행권 '스트레스 테스트' 착수…중동 리스크 최소화",
-        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1ubmh4_BVvloy2JJucptNIKf8pwPrEGr4MlO8PDtfAXtfsZCE0rN6yBHgELb8H8lEdhjlm3AbZLVoRo0pKSI5i3GBatDeYOpjDepmBk48Z20ZAA81ob0CvmoWg9qS-58VKU4vWKAQwLOlkSrvPPdNzQ=="
+        "publisher": "뉴스토마토",
+        "title": "부동산 PF 연착륙 지표 개선 착시…국감 쟁점 예고",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJPMQuBH6bSRcrtOLKHWc2Du41gALStkgrtvo5RGvP3NAWZlZCU6abKtt5IrotlEOxOnIk8hwt4fEU6-bA01XnUgerLPVSTFavSLGLrNbHb_pjKBzbLUOK3UVweRCC2GCg1qoWqnFvkLQoW6xt"
       },
       {
-        "publisher": "Daum",
-        "title": "금감원, 외화 유동성 스트레스 테스트 매달 실시…위기 대응 관리 강화",
-        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAN5xS8hKW6_wB9FGxIGdnv0pK2LaUOj7Zk7ut7fuFJNaR1feztm7AOL27anAdEhyFSAxa7XzaHFyhIoSjt3ZGzDpFPdXvezkcnX0XWm-e5yXbe-DXGpAenOs="
+        "publisher": "박수호칼럼",
+        "title": "PF 익스포저는 줄었지만 연체율은 올랐다…PF 시장은 회복이 아니라 선별 중이다",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUQQRjYwD30NrZ7VGrizJMzYT8Il1BgDesXgOGqgOw64B1UG8eckHn9F3TfUlmdYNPKrZfecGkdQEnSrvGBRP74pwe2oQcVspCu1_lPUObcxS46SVkHiVobnptXPT0bwW_xBVnUoO0WHgLwqHctm8z87Ds4Qb-KrJ1"
       }
     ],
-    "collectedAt": "2026-10-04 02:25"
+    "collectedAt": "2026-10-04 15:35"
   },
   {
     "id": 2,
-    "cat": "핀테크/규제",
+    "cat": "부동산",
     "level": "중",
-    "bg": "#34495e",
-    "title": "금융당국 규제 변화로 핀테크·인뱅, '신파일러' 대출 시장 확대",
-    "hl": "금융당국의 규제 완화에 힘입어 인터넷은행과 핀테크 기업들이 신용 이력이 부족한 '신파일러' 대상 대출 상품을 확대하며 시장 경쟁이 심화되고 있다.",
-    "summary": "금융당국이 지난 8월부터 2금융권의 중금리대출 규제를 완화함에 따라, 인터넷은행과 핀테크 기업들이 신용 이력이 부족한 '신파일러'를 대상으로 한 대출 시장을 적극적으로 확대하고 있다. 이는 자체 AI 솔루션과 '토스 스코어' 기반의 맞춤형 신용 모형을 활용하여 상환 능력을 정교하게 평가할 수 있게 되면서 가능해졌다. 이러한 규제 변화는 금융 소외 계층의 대출 접근성을 높이는 동시에, 핀테크 기업들의 혁신적인 신용 평가 모델 개발을 촉진하고 금융 시장의 경쟁을 심화시킬 것으로 예상된다.",
+    "bg": "#34495E",
+    "title": "부동산PF 연착륙 지표 개선은 착시, 시장 양극화 심화",
+    "hl": "금융당국의 부동산PF 연착륙 대책에도 불구하고, 전체 익스포저 감소는 착시이며 시장 양극화가 심화되고 있다는 지적이 제기된다.",
+    "summary": "금융당국은 부동산PF 익스포저가 감소하고 유의·부실우려 등급 PF도 줄었다고 발표했으나, 장기간 자금 회수가 이뤄지지 않은 PF는 오히려 빠르게 늘어 시장 양극화가 심화되고 있다는 분석이 나왔다. 한국신용평가에 따르면 장기 미회수 PF는 2025년 6월 2조8000억원에서 2026년 3월 13조1000억원으로 약 4.7배 증가했으며, 이 중 97%가 중·고위험 자산으로 분류되었다. 이는 정상 사업장에는 자금이 유입되지만, 사업성이 낮은 곳은 정리가 지연되고 있음을 시사한다.",
     "points": [
-      "금융당국, 8월부터 2금융권 중금리대출 규제 완화",
-      "핀테크·인뱅, AI 기반 신용 모형 활용해 '신파일러' 대출 확대",
-      "금융 소외 계층 대출 접근성 향상 및 시장 경쟁 심화 기대"
+      "전체 PF 익스포저 감소에도 불구하고 장기 미회수 PF는 4.7배 증가 (2025년 6월 2.8조원 → 2026년 3월 13.1조원).",
+      "장기 미회수 PF의 97%가 중·고위험 자산으로 분류.",
+      "PF 시장의 양극화 심화: 우량 사업장 자금 유입 vs. 부실 사업장 정리 지연."
     ],
-    "imp": "핀테크 기업들은 혁신적인 신용 평가 기술을 통해 새로운 시장 기회를 창출할 수 있으며, 금융 소외 계층은 더 다양한 대출 상품에 접근할 수 있게 됩니다. 기존 금융권은 경쟁 심화에 대비하여 서비스 차별화 전략을 모색해야 합니다.",
+    "imp": "금융당국은 표면적인 지표 개선에 안주하지 않고, 장기 미회수 및 고위험 PF 사업장에 대한 보다 적극적인 구조조정 및 정리를 추진해야 할 필요가 있다. 국정감사에서 이 문제가 주요 쟁점이 될 것으로 예상된다.",
     "sources": [
       {
-        "publisher": "매일경제",
-        "title": "“빚 잘 갚을 사람인지 다 알수 있어요”…'신파일러' 대출 판 키우는 인뱅·핀테크",
-        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbBXGxkkAv9qbs31SyHt70VXsiadYGCBoRQ-qcFiutIZJnmqqDxofHz6NFGbuqBQQGav35WOEzQUVXeR020PQUjnXQsd_lJcpUGU5jkwhpAkodl7M_ZpLxeOyqgRUIfACKPaxJtg=="
+        "publisher": "뉴스토마토",
+        "title": "부동산 PF 연착륙 지표 개선 착시…국감 쟁점 예고",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJPMQuBH6bSRcrtOLKHWc2Du41gALStkgrtvo5RGvP3NAWZlZCU6abKtt5IrotlEOxOnIk8hwt4fEU6-bA01XnUgerLPVSTFavSLGLrNbHb_pjKBzbLUOK3UVweRCC2GCg1qoWqnFvkLQoW6xt"
+      },
+      {
+        "publisher": "박수호칼럼",
+        "title": "PF 익스포저는 줄었지만 연체율은 올랐다…PF 시장은 회복이 아니라 선별 중이다",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUQQRjYwD30NrZ7VGrizJMzYT8Il1BgDesXgOGqgOw64B1UG8eckHn9F3TfUlmdYNPKrZfecGkdQEnSrvGBRP74pwe2oQcVspCu1_lPUObcxS46SVkHiVobnptXPT0bwW_xBVnUoO0WHgLwqHctm8z87Ds4Qb-KrJ1"
       }
     ],
-    "collectedAt": "2026-10-04 02:25"
+    "collectedAt": "2026-10-04 15:35"
+  },
+  {
+    "id": 3,
+    "cat": "금융규제",
+    "level": "고",
+    "bg": "#1F2E4A",
+    "title": "바젤3 규제 강화로 국내 은행 자본 확충 압박 심화",
+    "hl": "바젤3 규제 적용에 따라 신한은행 등 국내 은행들이 위험가중자산(RWA) 관리를 통해 대규모 자본 확충 압박을 받고 있다.",
+    "summary": "바젤3 규제 적용으로 신한은행은 올해 2조8000억원 이상의 자본을 추가 확보해야 할 것으로 예상되는 등 국내 은행들이 자본 확대에 대한 압박을 받고 있다. 이는 내부모형 위험가중자산(RWA) 비중을 표준방법 대비 일정 수준 이상으로 높여야 하는 규제 때문으로, 2026년 목표치 70%를 달성하기 위한 자산 리스크 관리가 최우선 과제로 부상했다. 특히 가계대출보다 위험가중치가 높은 생산적 금융 확대를 추진해야 하는 상황에서 은행들의 고민이 깊어지고 있다.",
+    "points": [
+      "바젤3 규제에 따라 은행의 내부모형 RWA 비중을 표준방법 대비 2026년 70%까지 상향해야 함.",
+      "신한은행은 2026년에 2.8조원 이상의 자본 확충이 필요할 것으로 전망.",
+      "생산적 금융 확대 기조 속에서 위험가중자산 관리가 핵심 과제로 부상."
+    ],
+    "imp": "국내 은행들은 강화된 바젤3 규제에 맞춰 자본 적정성을 유지하기 위해 자산 포트폴리오 조정, 위험가중자산 관리 고도화, 그리고 필요시 추가 자본 확충을 적극적으로 검토해야 한다. 이는 은행의 대출 전략 및 수익성에 영향을 미칠 수 있다.",
+    "sources": [
+      {
+        "publisher": "머니투데이",
+        "title": "\"올해 자본 2.8조 더 늘려야\"...위험가중자산 압박받는 신한은행",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhTRlYqz1-Aw7hMuiBBEXWlhiAMr3O_68OxeX9Du8-iI9oj7fIpaarM6iQpgStKSdYImvZlKMQ_XRxE_kRJZi77f84LH1npIBlZRDIaGOh0qv350WYyu2V60qkNV_BhJPC5ciqV68-G2ZcQcLnRjxK6W4Dfz8"
+      }
+    ],
+    "collectedAt": "2026-10-04 15:35"
+  },
+  {
+    "id": 4,
+    "cat": "금융규제",
+    "level": "중",
+    "bg": "#283747",
+    "title": "바젤 III 최종안, 기업대출 확대를 통한 은행 건전성 강화 유도",
+    "hl": "바젤 III 최종안은 은행의 위험자산 기준을 변경하고 가계대출보다 기업대출을 늘리도록 유도하여 은행의 손실흡수능력을 강화하는 데 중점을 둔다.",
+    "summary": "국제결제은행(BIS) 산하 바젤은행감독위원회(BCBS)가 2008년 글로벌 금융위기 이후 발표한 바젤 III 최종안은 은행의 위험자산 기준을 변경하고 위험자산비율을 하향 조정하는 내용을 담고 있다. 이는 은행이 위기 시 손실흡수능력을 제고하기 위해 가계대출을 줄이고 기업대출을 증가시키는 것을 유도하는 것이 주된 목적이다. 한국 금융당국은 2020년 6월부터 바젤 III 최종안을 조기 적용하여 생산적 금융 확대를 지원하고 있다.",
+    "points": [
+      "바젤 III 최종안은 은행의 위험자산 기준 변경 및 위험자산비율 하향 조정.",
+      "가계대출보다 기업대출 확대를 유도하여 은행의 손실흡수능력 강화.",
+      "한국은 2020년 6월부터 바젤 III 최종안을 조기 적용하여 생산적 금융 지원."
+    ],
+    "imp": "은행들은 바젤 III 최종안의 취지에 따라 기업대출 비중을 늘리고 가계대출 리스크를 관리하는 방향으로 대출 전략을 재편할 필요가 있다. 이는 국내 금융시장의 자금 흐름에도 영향을 미칠 수 있다.",
+    "sources": [
+      {
+        "publisher": "나무위키",
+        "title": "바젤 III",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYYljlN5EWR2X4iIIHZzI57en0k-jOg8qpgWu3m1Whqf3AQgNln4NaHH-Y_7Bi76M6Yi08zOweiVOzm5HcD-cO0nFiADe5XClUem9IMriN_Nm9D5UIi00yLNLe_eALbH1xFfjNYCnw"
+      }
+    ],
+    "collectedAt": "2026-10-04 15:35"
+  },
+  {
+    "id": 5,
+    "cat": "금융규제",
+    "level": "저",
+    "bg": "#34495E",
+    "title": "국내은행 2026년 1분기 BIS 비율 하락, 환율 상승 등 리스크 요인 상존",
+    "hl": "2026년 1분기 국내은행의 BIS 기준 총자본비율이 소폭 하락했으나, 규제 기준은 상회하며 양호한 수준을 유지하고 있다.",
+    "summary": "2026년 1분기 말 국내은행의 BIS 기준 총자본비율은 15.64%로 지난해 말 대비 0.19%포인트 하락했다. 이는 기업 익스포저 증가 및 달러-원 환율 상승에 따른 외화자산 위험가중자산 증가 등의 영향으로 분석된다. 모든 은행이 보통주자본비율 8.0%, 기본자본비율 9.5%, 총자본비율 11.5% 등 규제비율을 크게 상회하며 양호한 건전성을 유지하고 있으나, 중동 전쟁 등 대내외 리스크 요인과 금리·환율 변동성 확대가 건전성 관리에 부담으로 작용할 수 있다는 지적이다.",
+    "points": [
+      "2026년 1분기 국내은행 BIS 총자본비율 15.64%로 전년 말 대비 0.19%p 하락.",
+      "기업 익스포저 증가 및 환율 상승이 위험가중자산 증가에 영향.",
+      "모든 은행이 규제비율을 상회하나, 대내외 리스크 요인으로 건전성 관리 부담 상존."
+    ],
+    "imp": "국내 은행들은 현재 양호한 자본 건전성을 유지하고 있으나, 글로벌 경제 불확실성 및 환율 변동성 확대에 대비하여 선제적인 리스크 관리와 손실흡수능력 확충 노력을 지속해야 한다.",
+    "sources": [
+      {
+        "publisher": "연합인포맥스",
+        "title": "국내은행 1분기 BIS 비율 15.64%…환율 상승 여파",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKU0qbs6oNYzebyX42_O6J8mAHTRSLmBhH6dFPptgR6Z7qMM4EEzOOcJzmPG8Xbz1n8YoA3yLDxvWFJai7vWRmOjtjv3lseA46okd7vHsWkGSTXfOETaZtLehziDES-BiyKPz0g-3l4qtOBIK9y1oqnRJxOPulTmEU"
+      }
+    ],
+    "collectedAt": "2026-10-04 15:35"
+  },
+  {
+    "id": 6,
+    "cat": "ESG",
+    "level": "고",
+    "bg": "#1C2833",
+    "title": "금융위, 2028년부터 ESG 공시 의무화 단계적 시행 로드맵 발표",
+    "hl": "금융위원회가 2028년부터 연결자산 30조원 이상 대형 코스피 상장사를 시작으로 ESG 공시 의무화를 단계적으로 추진하는 로드맵을 발표했다.",
+    "summary": "금융위원회는 2028년(2027 사업연도)부터 연결자산 30조원 이상의 대형 코스피 상장사를 대상으로 ESG 공시 의무화를 시작으로 단계적으로 확대하는 로드맵을 발표했다. 이는 국제지속가능성기준위원회(ISSB) 기준에 기반한 의무공시 체계로의 전환을 공식화한 것으로, 기업들은 지배구조와 공급망 관리 체계 전반을 재정비해야 하는 과제를 안게 되었다. 특히 스코프3(공급망 포함 온실가스 배출량) 공시는 2031년부터 의무화될 예정이다.",
+    "points": [
+      "2028년부터 연결자산 30조원 이상 코스피 상장사 대상 ESG 공시 의무화 시작.",
+      "ISSB 기준 기반 의무공시 체계로 전환, 기업 지배구조 및 공급망 관리 재정비 필요.",
+      "스코프3 공시는 2031년부터 의무화 예정."
+    ],
+    "imp": "국내 기업들은 ESG 공시 의무화에 대비하여 ESG 데이터 수집 및 관리 시스템을 구축하고, 내부통제 체계를 고도화하는 등 전사적인 준비를 서둘러야 한다. 이는 기업의 평판 및 투자 유치에도 중요한 영향을 미칠 것이다.",
+    "sources": [
+      {
+        "publisher": "Kim & Chang",
+        "title": "금융위원회, 지속가능성(ESG) 공시 로드맵 발표: 2028년부터 단계적 의무화",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwYUV2_wcamD7mHeg8twnsJDnMzUH_EblKKk1DP86ozy2Vd-4tV_xlhZHYSYsxKVZhYjE2_KGd8Qtr2fAlR0p_iJ6v3pflCnpLu0iu28bqZb6yqAsHd4KvK8xFCBPkq7uk1yzSE0mpr_A8Q9I19yBIFmGGxHxy5jGNE0WpVAnzYA"
+      },
+      {
+        "publisher": "법무법인 세종",
+        "title": "금융위원회, 지속가능성 공시제도 로드맵 발표",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRrCEj8O4bHp0Ql7xZqGtuOlFTlIyNK8-brvldvzoH_NGuAd2FPbaZxKhftggbaWS5272TQmSwUCFsxiZ-hzWg0Wxyr-nk-PptC9I019iBDkNBIKwH3cOHYweaT--1wByU0yXY9sviQTnCkw"
+      },
+      {
+        "publisher": "법률신문",
+        "title": "금융위원회, 지속가능성 공시제도 로드맵 발표",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECx2hgH68NQvtgTLAg85JUWXQBWPCFrRsmgCnnygbIAMMYs-iR1MoOzKe7wLUt77Iyqrz0i5xNQcx7qVNJHNbifom8SW7ijsAFftRF0jZ1MtWEybHYLv3Lf1l-dB7PpAbxBIcfuyWzcFw1cCWFGJQagx2CIXXP7g"
+      }
+    ],
+    "collectedAt": "2026-10-04 15:35"
+  },
+  {
+    "id": 7,
+    "cat": "ESG",
+    "level": "고",
+    "bg": "#2C3E50",
+    "title": "EU, 2026년부터 그린워싱 규제 집행 강화, 금융시장 영향 확대",
+    "hl": "EU는 2026년을 기점으로 그린워싱 규제의 실질적 집행을 강화하며, 금융상품의 ESG 명칭 사용에 대한 감독을 강화한다.",
+    "summary": "EU는 2026년을 그린워싱 규제의 실질적 집행 단계로 전환되는 시기로 보고, 실물경제와 금융시장 전반에 걸쳐 관련 규제 체계를 강화하고 있다. 특히 금융시장에서는 ESG 및 지속가능성 관련 용어를 사용하는 펀드 명칭과 투자 포트폴리오 간의 실질적 정합성이 주요 감독 대상이 되고 있다. 이는 기업 및 금융상품이 환경적으로 실제보다 우수한 것처럼 인식되도록 하는 '그린워싱'을 방지하기 위함이다.",
+    "points": [
+      "EU, 2026년부터 그린워싱 규제의 실질적 집행 단계로 전환.",
+      "금융상품의 ESG 명칭과 실제 투자 내용 간의 정합성 감독 강화.",
+      "그린워싱 방지를 통해 ESG 정보의 신뢰성 확보 목적."
+    ],
+    "imp": "국내 금융기관 및 기업들은 EU의 강화된 그린워싱 규제 동향을 면밀히 주시하고, ESG 관련 상품 및 서비스의 명칭 사용과 실제 투자/경영 활동 간의 일관성을 확보해야 한다. 위반 시 평판 하락 및 제재 리스크가 커질 수 있다.",
+    "sources": [
+      {
+        "publisher": "법률신문",
+        "title": "2026년 주목해야 하는 ESG 규제 (7) EU 그린워싱 관련 규제",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjki1joE8l1EIr-rMJTxy_RrkDEfg9MoCaFJdZnuI2UXpdC8o-7s4_lOLB2cTdk8t_kGV58XCucSiVJivfpR_vi-Kjqb58EAtYZkJCrogRXg1hxbMq20-oSnL-6f7VAhw8Hk1XcQUeymDVFLuaYS5SIBI-GxXvbA"
+      },
+      {
+        "publisher": "법무법인 세종",
+        "title": "2026년 주목해야 하는 ESG 규제 (7) EU 그린워싱 관련 규제",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJzT14Kao1Ql28pvHBWJ5ug_XLeH8oZmXjASKsRav_dEYzs-q6DEghfHoB6KsQzKyiJ4w0V9GFk6FgU1mFbY5d_YWEu05DEdZXb8OnorhY9xGRkzi5GuRFom14TeW3bvcLuxyU9ToBHVCNJQ"
+      }
+    ],
+    "collectedAt": "2026-10-04 15:35"
+  },
+  {
+    "id": 8,
+    "cat": "ESG",
+    "level": "중",
+    "bg": "#34495E",
+    "title": "2026년, ESG 공시 의무화로 기업의 데이터 관리 역량 중요성 증대",
+    "hl": "2026년부터 ESG 공시가 법적 의무로 전환되면서 기업은 연결 기준의 데이터 관리 체계 구축과 외부 검증 대응 역량이 중요해진다.",
+    "summary": "2026년부터 ESG 공시가 주요국에서 선택적 보고가 아닌 법적 의무로 전환되면서 기업의 규제 대응 필요성이 커지고 있다. 글로벌 ESG 공시의 핵심은 보고서 작성이 아니라 해외법인, 자회사, 협력사까지 포함한 연결 기준의 데이터 관리 체계 구축이다. ESG 공시 미흡은 과태료를 넘어 투자, 평판, 공급망 리스크로 이어질 수 있으며, 특히 기후 공시는 리스크뿐 아니라 기회, 재무 영향, Scope1·2·3 배출량까지 포함하는 방향으로 강화되고 있다.",
+    "points": [
+      "2026년부터 ESG 공시가 법적 의무로 전환되며 규제 대응 필요성 증대.",
+      "연결 기준의 데이터 관리 체계 구축 및 외부 검증 대응 역량 중요.",
+      "공시 미흡 시 과태료, 투자, 평판, 공급망 리스크로 확대 가능성."
+    ],
+    "imp": "기업들은 ESG 공시를 단순한 보고 의무가 아닌, 전사적인 데이터 관리 및 내부 통제 시스템 구축의 기회로 삼아야 한다. 특히 공급망 전반의 ESG 데이터를 통합 관리하고, 외부 검증에 대비하는 것이 핵심 경쟁력이 될 것이다.",
+    "sources": [
+      {
+        "publisher": "삼성SDS",
+        "title": "2026년 ESG 공시 의무화 동향과 시사점 고찰",
+        "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEk_ptrZlUvFegicc9KaPZoBOCWizoQcBW_TJB_x5BWSqjMoUOormZWQZ7qMwi9rSHf8-MgRCLeebw5-dJr5PM1kGSEeBKQ4TtT1Hx4su0eNdSzyuOis6OxIFqN8vZthhvSs7UJOccfN0MWTBEBao_6SWiTiWtZAnLGkdlZn0N1yOco3MYd-pR3Gz7S9A"
+      }
+    ],
+    "collectedAt": "2026-10-04 15:35"
   }
 ];
 
 // ── 사이트 메타 (collector.py가 자동 교체) ──────────
 const SITE_META = {
-  "lastCollect": "2026-10-04 02:25",
-  "nextCollect": "20:00",
-  "todayCollect": 3,
-  "totalArticles": 3,
+  "lastCollect": "2026-10-04 15:36",
+  "nextCollect": "08:00 (내일)",
+  "todayCollect": 9,
+  "totalArticles": 9,
   "market": {
     "kospi": "수집중",
     "usdkrw": "수집중",
@@ -358,11 +511,11 @@ const SITE_META = {
     "rate": "3.50%"
   },
   "keywords": [
-    "#핀테크/규제",
-    "#금융/경제",
-    "#금융정책"
+    "#ESG",
+    "#금융규제",
+    "#부동산"
   ],
-  "todayWord": "한국은행, 두 차례 기준금리 인상으로 물가 및 주택시장 안정과 가계부채 증가세 억제 효과 기대하며 관리 기조 지속 강조."
+  "todayWord": "금융당국, 은행의 부동산PF 신용공여를 총 신용공여의 20% 이내로 제한하는 규제를 2027년부터 시행한다."
 };
 
 // ── 상태 ─────────────────────────────────────────────
